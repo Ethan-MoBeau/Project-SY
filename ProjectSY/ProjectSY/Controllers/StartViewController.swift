@@ -22,18 +22,18 @@ class StartViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-//    @IBAction func goToDetailStorybaord(_ sender: UIButton) {
-//
-//        let storyboard = UIStoryboard(name: "RoomDetail", bundle: nil)
-//
-//        guard let viewController = storyboard.instantiateViewController(withIdentifier: "RoomDetail") as? UITabBarController else {
-//            print("에러 : RoomDetailVC로 갈 수 없습니다")
-//            return
-//        }
-//        viewController.modalPresentationStyle = .fullScreen
-//        present(viewController, animated: true)
-//
-//    }
+    @IBAction func goToMainStorybaord(_ sender: UIButton) {
+
+        let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
+            print("에러 : Main으로 갈 수 없습니다")
+            return
+        }
+        
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
+    }
 
     /*
     // MARK: - Navigation

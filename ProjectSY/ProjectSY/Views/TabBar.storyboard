@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="szT-V4-FHp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--홈-->
+        <scene sceneID="KXG-ul-zjP">
+            <objects>
+                <viewController id="1Pl-yG-jBJ" customClass="HomeViewController" customModule="ProjectSY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aqp-co-q1f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="URu-AE-Keh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="홈" image="001-home" id="qqR-Zt-SD9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5od-Mj-zNR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-75" y="813"/>
+        </scene>
+        <!--환경설정-->
+        <scene sceneID="mCy-T9-MGQ">
+            <objects>
+                <tableViewController id="4QR-QK-oRf" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y0T-AX-06f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6MN-i4-vMb">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6MN-i4-vMb" id="s3N-UM-PfP">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4QR-QK-oRf" id="vil-08-AqV"/>
+                            <outlet property="delegate" destination="4QR-QK-oRf" id="DAc-hO-aCd"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="환경설정" image="010-gear" id="bWC-lh-bA4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHF-5Q-Ksd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="813"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MfD-6U-269">
+            <objects>
+                <tabBarController storyboardIdentifier="MainHome" automaticallyAdjustsScrollViewInsets="NO" id="szT-V4-FHp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yA4-a2-0hI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1Pl-yG-jBJ" kind="relationship" relationship="viewControllers" id="Zrc-F3-mdo"/>
+                        <segue destination="4QR-QK-oRf" kind="relationship" relationship="viewControllers" id="ABG-OW-Lmk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ryo-de-Rbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-75.362318840579718" y="45.535714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="001-home" width="20" height="20"/>
+        <image name="010-gear" width="20" height="20"/>
+    </resources>
+</document>

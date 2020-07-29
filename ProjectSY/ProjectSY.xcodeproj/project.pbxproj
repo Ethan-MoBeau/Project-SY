@@ -21,6 +21,12 @@
 		BF408D9524D17F050070225A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF408D9424D17F050070225A /* StartViewController.swift */; };
 		BF408D9624D17F050070225A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF408D9424D17F050070225A /* StartViewController.swift */; };
 		BF408D9724D17F050070225A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF408D9424D17F050070225A /* StartViewController.swift */; };
+		BF408D9924D1B4190070225A /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF408D9824D1B4190070225A /* TabBar.storyboard */; };
+		BF408D9A24D1B4190070225A /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF408D9824D1B4190070225A /* TabBar.storyboard */; };
+		BF408D9B24D1B4190070225A /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF408D9824D1B4190070225A /* TabBar.storyboard */; };
+		BF408D9D24D1B5B40070225A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF408D9C24D1B5B40070225A /* HomeViewController.swift */; };
+		BF408D9E24D1B5B40070225A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF408D9C24D1B5B40070225A /* HomeViewController.swift */; };
+		BF408D9F24D1B5B40070225A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF408D9C24D1B5B40070225A /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,8 @@
 		BF408D8624D052F00070225A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF408D8724D052F00070225A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BF408D9424D17F050070225A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		BF408D9824D1B4190070225A /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		BF408D9C24D1B5B40070225A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +147,7 @@
 			children = (
 				BF408D8624D052F00070225A /* LaunchScreen.storyboard */,
 				BF408D8724D052F00070225A /* Main.storyboard */,
+				BF408D9824D1B4190070225A /* TabBar.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				BF408D9424D17F050070225A /* StartViewController.swift */,
+				BF408D9C24D1B5B40070225A /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF408D9924D1B4190070225A /* TabBar.storyboard in Resources */,
 				BF408D8E24D052F00070225A /* Main.storyboard in Resources */,
 				BF408D8B24D052F00070225A /* LaunchScreen.storyboard in Resources */,
 				BF408D5124D04F920070225A /* Assets.xcassets in Resources */,
@@ -273,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF408D8C24D052F00070225A /* LaunchScreen.storyboard in Resources */,
+				BF408D9A24D1B4190070225A /* TabBar.storyboard in Resources */,
 				BF408D8F24D052F00070225A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF408D8D24D052F00070225A /* LaunchScreen.storyboard in Resources */,
+				BF408D9B24D1B4190070225A /* TabBar.storyboard in Resources */,
 				BF408D9024D052F00070225A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +309,7 @@
 				BF408D4824D04F910070225A /* AppDelegate.swift in Sources */,
 				BF408D4A24D04F910070225A /* SceneDelegate.swift in Sources */,
 				BF408D9524D17F050070225A /* StartViewController.swift in Sources */,
+				BF408D9D24D1B5B40070225A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +319,7 @@
 			files = (
 				BF408D5F24D04F920070225A /* ProjectSYTests.swift in Sources */,
 				BF408D9624D17F050070225A /* StartViewController.swift in Sources */,
+				BF408D9E24D1B5B40070225A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +329,7 @@
 			files = (
 				BF408D6A24D04F920070225A /* ProjectSYUITests.swift in Sources */,
 				BF408D9724D17F050070225A /* StartViewController.swift in Sources */,
+				BF408D9F24D1B5B40070225A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
