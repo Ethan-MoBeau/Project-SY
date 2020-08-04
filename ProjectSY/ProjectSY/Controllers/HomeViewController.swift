@@ -16,7 +16,16 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var settingGetOutButton: UIButton!
+    
+    @IBAction func settingOpen(_ sender: UIButton) {
+        settingGetOutButton.isHidden = false
+    }
+    
+    @IBAction func settingClose(_ sender: UIButton) {
+        settingGetOutButton.isHidden = true
+    }
     /*
     // MARK: - Navigation
 

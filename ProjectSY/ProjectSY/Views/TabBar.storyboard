@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,14 +13,47 @@
                     <view key="view" contentMode="scaleToFill" id="aqp-co-q1f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="홈 화면 배경" translatesAutoresizingMaskIntoConstraints="NO" id="WHb-1b-PoC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Nn-iY-8S9">
+                                <rect key="frame" x="345.5" y="749.5" width="41" height="41"/>
+                                <state key="normal" title="Button" image="more3_1"/>
+                                <connections>
+                                    <action selector="settingOpen:" destination="1Pl-yG-jBJ" eventType="touchUpInside" id="xpI-cl-Qmi"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K48-ux-XFk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="settingClose:" destination="1Pl-yG-jBJ" eventType="touchUpInside" id="GzF-P0-mYD"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="URu-AE-Keh"/>
+                        <constraints>
+                            <constraint firstItem="K48-ux-XFk" firstAttribute="leading" secondItem="aqp-co-q1f" secondAttribute="leading" id="CDq-5Y-fYy"/>
+                            <constraint firstItem="6Nn-iY-8S9" firstAttribute="centerX" secondItem="aqp-co-q1f" secondAttribute="centerX" multiplier="366/207" id="QlB-n7-kmV"/>
+                            <constraint firstItem="6Nn-iY-8S9" firstAttribute="height" secondItem="aqp-co-q1f" secondAttribute="height" multiplier="0.0457589" id="SHZ-wC-kAS"/>
+                            <constraint firstAttribute="trailing" secondItem="K48-ux-XFk" secondAttribute="trailing" id="ZuL-b3-IPG"/>
+                            <constraint firstItem="6Nn-iY-8S9" firstAttribute="width" secondItem="aqp-co-q1f" secondAttribute="width" multiplier="41/414" id="bIs-40-tNa"/>
+                            <constraint firstItem="K48-ux-XFk" firstAttribute="height" secondItem="aqp-co-q1f" secondAttribute="height" multiplier="0.907366" id="peU-5M-8JR"/>
+                            <constraint firstItem="K48-ux-XFk" firstAttribute="top" secondItem="aqp-co-q1f" secondAttribute="top" id="uHV-Hp-TW5"/>
+                            <constraint firstItem="6Nn-iY-8S9" firstAttribute="centerY" secondItem="aqp-co-q1f" secondAttribute="centerY" multiplier="770/448" id="ycn-DN-HiL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="001-home" id="qqR-Zt-SD9"/>
+                    <connections>
+                        <outlet property="moreButton" destination="6Nn-iY-8S9" id="fg1-dn-1de"/>
+                        <outlet property="settingGetOutButton" destination="K48-ux-XFk" id="enz-qn-ka5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5od-Mj-zNR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-75" y="813"/>
+            <point key="canvasLocation" x="-75.362318840579718" y="812.94642857142856"/>
         </scene>
         <!--환경설정-->
         <scene sceneID="mCy-T9-MGQ">
@@ -58,6 +90,7 @@
                 <tabBarController storyboardIdentifier="MainHome" automaticallyAdjustsScrollViewInsets="NO" id="szT-V4-FHp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yA4-a2-0hI">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
@@ -75,5 +108,7 @@
     <resources>
         <image name="001-home" width="20" height="20"/>
         <image name="010-gear" width="20" height="20"/>
+        <image name="more3_1" width="47" height="47"/>
+        <image name="홈 화면 배경" width="1536" height="2048"/>
     </resources>
 </document>
