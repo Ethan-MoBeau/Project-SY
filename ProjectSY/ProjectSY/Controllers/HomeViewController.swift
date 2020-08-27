@@ -94,8 +94,11 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        
         if let newImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+
             BGImage.image = newImage
+            FileManager.default
         }
         
         dismiss(animated: true, completion: nil)

@@ -14,8 +14,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="홈 화면 배경" translatesAutoresizingMaskIntoConstraints="NO" id="WHb-1b-PoC">
-                                <rect key="frame" x="-88.666666666666686" y="0.0" width="552.33333333333337" height="736.66666666666663"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="홈 화면 배경" translatesAutoresizingMaskIntoConstraints="NO" id="WHb-1b-PoC">
+                                <rect key="frame" x="-181" y="0.0" width="737" height="737"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Nn-iY-8S9">
                                 <rect key="frame" x="310.33333333333331" y="676.66666666666663" width="42.333333333333314" height="42.333333333333371"/>
@@ -73,7 +73,6 @@
                             <constraint firstItem="luW-mU-19G" firstAttribute="width" secondItem="aqp-co-q1f" secondAttribute="width" multiplier="47/414" id="DaT-kX-L8s"/>
                             <constraint firstItem="WHb-1b-PoC" firstAttribute="top" secondItem="aqp-co-q1f" secondAttribute="top" id="EZ7-ie-qkt"/>
                             <constraint firstItem="Yor-ye-3xL" firstAttribute="centerX" secondItem="aqp-co-q1f" secondAttribute="centerX" multiplier="366/207" id="GAj-Bx-pD1"/>
-                            <constraint firstItem="WHb-1b-PoC" firstAttribute="width" secondItem="aqp-co-q1f" secondAttribute="width" multiplier="610/414" id="Jf3-6a-cDa"/>
                             <constraint firstItem="Joi-qq-DkX" firstAttribute="centerX" secondItem="aqp-co-q1f" secondAttribute="centerX" multiplier="366/207" id="K8l-N9-dfM"/>
                             <constraint firstItem="HP5-v9-2he" firstAttribute="leading" secondItem="aqp-co-q1f" secondAttribute="leading" id="NeM-jq-sNn"/>
                             <constraint firstItem="Joi-qq-DkX" firstAttribute="height" secondItem="aqp-co-q1f" secondAttribute="height" multiplier="0.0524554" id="PvO-pt-gAW"/>
@@ -107,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5od-Mj-zNR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-75.362318840579718" y="812.94642857142856"/>
+            <point key="canvasLocation" x="-76" y="812.807881773399"/>
         </scene>
         <!--환경설정-->
         <scene sceneID="mCy-T9-MGQ">
