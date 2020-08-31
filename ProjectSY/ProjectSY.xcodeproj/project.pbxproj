@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,8 @@
 		BF9F7D3E24F806D0000718F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */; };
 		BF9F7D3F24F806D0000718F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */; };
 		BF9F7D4024F806D0000718F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */; };
+		BF9F7D4224FD39D6000718F5 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4124FD39D6000718F5 /* Connection.swift */; };
+		BF9F7D4424FD4CC7000718F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4324FD4CC7000718F5 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		BF408D9824D1B4190070225A /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		BF408D9C24D1B5B40070225A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF9F7D4124FD39D6000718F5 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		BF9F7D4324FD4CC7000718F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BFD9367522C389254FCAB4E8 /* Pods-ProjectSY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSY.release.xcconfig"; path = "Target Support Files/Pods-ProjectSY/Pods-ProjectSY.release.xcconfig"; sourceTree = "<group>"; };
 		C22FA1EAB95AD553980075EB /* Pods-ProjectSYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSYTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectSYTests/Pods-ProjectSYTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +190,8 @@
 		BF408D8A24D052F00070225A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BF9F7D4124FD39D6000718F5 /* Connection.swift */,
+				BF9F7D4324FD4CC7000718F5 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,7 +206,6 @@
 				C22FA1EAB95AD553980075EB /* Pods-ProjectSYTests.debug.xcconfig */,
 				A18F8EA278FB8136372FBADE /* Pods-ProjectSYTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -465,6 +470,8 @@
 			files = (
 				BF408D4824D04F910070225A /* AppDelegate.swift in Sources */,
 				BF408D4A24D04F910070225A /* SceneDelegate.swift in Sources */,
+				BF9F7D4424FD4CC7000718F5 /* User.swift in Sources */,
+				BF9F7D4224FD39D6000718F5 /* Connection.swift in Sources */,
 				BF408D9524D17F050070225A /* StartViewController.swift in Sources */,
 				BF408D9D24D1B5B40070225A /* HomeViewController.swift in Sources */,
 			);

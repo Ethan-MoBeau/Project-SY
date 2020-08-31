@@ -7,6 +7,7 @@ target 'ProjectSY' do
 
   # Pods for ProjectSY
   pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
   
   target 'ProjectSYTests' do
     inherit! :search_paths

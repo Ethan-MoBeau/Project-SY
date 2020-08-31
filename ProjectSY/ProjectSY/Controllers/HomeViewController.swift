@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
     
@@ -16,10 +17,17 @@ class HomeViewController: UIViewController {
         BGImagePickController.delegate = self
         BGImagePickController.allowsEditing = true
         
+        DdayLabel.font = DdayLabel.font?.withSize(self.view.frame.height * 15 / 896)
+        
+        user1Button.layer.cornerRadius = user1Button.layer.frame.size.width/2.5
+        user2Button.layer.cornerRadius = user2Button.layer.frame.size.width/2.5
+        
         if let savedBG = localImageLoad(directory: .documentDirectory, fileName: "HomeBG") {
             BGImage.image = savedBG
         }
     }
+    
+    @IBOutlet weak var DdayLabel: UILabel!
     
     @IBOutlet weak var BGImage: UIImageView!
     
@@ -29,6 +37,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var settingGetOutButton: UIButton!
     @IBOutlet weak var editBGButton: UIButton!
     @IBOutlet weak var editBGCloseButton: UIButton!
+    
+    @IBOutlet weak var user1Button: UIButton!
+    @IBOutlet weak var user2Button: UIButton!
     
     let BGImagePickController = UIImagePickerController()
     
@@ -130,10 +141,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        
         if let newImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-
             BGImage.image = newImage
             
             localImageSave(image: newImage, directory: .documentDirectory, fileName: "HomeBG")
