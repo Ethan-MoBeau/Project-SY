@@ -16,7 +16,9 @@ class HomeViewController: UIViewController {
         BGImagePickController.delegate = self
         BGImagePickController.allowsEditing = true
         
-        // Do any additional setup after loading the view.
+        if let savedBG = localImageLoad(directory: .documentDirectory, fileName: "HomeBG") {
+            BGImage.image = savedBG
+        }
     }
     
     @IBOutlet weak var BGImage: UIImageView!
@@ -55,6 +57,41 @@ class HomeViewController: UIViewController {
         editBGCloseButton.isHidden = true
     }
 
+    func localImageLoad(directory: FileManager.SearchPathDirectory, fileName: String) -> UIImage? {
+        let url = FileManager.default.urls(for: directory, in: .userDomainMask)[0].appendingPathComponent("\(fileName).jpeg")
+        
+        if FileManager.default.fileExists(atPath: url.path) {
+            guard let cachedData = FileManager.default.contents(atPath: url.path) else { return nil }
+            
+            // 변환 가능 한 경우 success, 불가한 경우 failure
+            if let cachedImage = UIImage(data: cachedData){
+                return cachedImage
+            }
+        }
+        
+        return nil
+    }
+    
+    func localImageSave(image: UIImage, directory :FileManager.SearchPathDirectory, fileName: String){
+        let url = FileManager.default.urls(for: directory, in: .userDomainMask)[0].appendingPathComponent("\(fileName).jpeg")
+        
+        if FileManager.default.fileExists(atPath: url.path) {
+            do {
+               try FileManager.default.removeItem(atPath: url.path)
+               // 기존 사진 제거
+            }
+            catch {
+                fatalError("Home BG Image Not Exists")
+            }
+        }
+        
+        guard let transformedImage = image.jpegData(compressionQuality: 1) else {
+            return
+        }
+        
+        FileManager.default.createFile(atPath: url.path, contents: transformedImage)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -98,7 +135,8 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         if let newImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
 
             BGImage.image = newImage
-            FileManager.default
+            
+            localImageSave(image: newImage, directory: .documentDirectory, fileName: "HomeBG")
         }
         
         dismiss(animated: true, completion: nil)

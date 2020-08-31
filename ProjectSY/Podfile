@@ -6,7 +6,7 @@ target 'ProjectSY' do
   use_frameworks!
 
   # Pods for ProjectSY
-  pod 'Firebase/Analytics'
+  pod 'Firebase/Storage'
   
   target 'ProjectSYTests' do
     inherit! :search_paths
