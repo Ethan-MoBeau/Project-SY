@@ -8,6 +8,8 @@ target 'ProjectSY' do
   # Pods for ProjectSY
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   
   target 'ProjectSYTests' do
     inherit! :search_paths

@@ -23,17 +23,27 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func goToMainStorybaord(_ sender: UIButton) {
-
-        let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
-
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
-            print("에러 : Main으로 갈 수 없습니다")
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignIn") else {
+            print("Cannot Segue to SignIn ViewController")
             return
         }
         
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }
+    
+//    @IBAction func goToMainStorybaord(_ sender: UIButton) {
+//
+//        let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+//
+//        guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
+//            print("에러 : Main으로 갈 수 없습니다")
+//            return
+//        }
+//
+//        viewController.modalPresentationStyle = .fullScreen
+//        present(viewController, animated: true)
+//    }
 
     /*
     // MARK: - Navigation

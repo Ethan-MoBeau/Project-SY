@@ -35,6 +35,9 @@
 		BF9F7D4024F806D0000718F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */; };
 		BF9F7D4224FD39D6000718F5 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4124FD39D6000718F5 /* Connection.swift */; };
 		BF9F7D4424FD4CC7000718F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4324FD4CC7000718F5 /* User.swift */; };
+		BF9F7D4624FE36BA000718F5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */; };
+		BF9F7D4724FE36BA000718F5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */; };
+		BF9F7D4824FE36BA000718F5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,7 @@
 		BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF9F7D4124FD39D6000718F5 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		BF9F7D4324FD4CC7000718F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BFD9367522C389254FCAB4E8 /* Pods-ProjectSY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSY.release.xcconfig"; path = "Target Support Files/Pods-ProjectSY/Pods-ProjectSY.release.xcconfig"; sourceTree = "<group>"; };
 		C22FA1EAB95AD553980075EB /* Pods-ProjectSYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSYTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectSYTests/Pods-ProjectSYTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +187,7 @@
 			children = (
 				BF408D9424D17F050070225A /* StartViewController.swift */,
 				BF408D9C24D1B5B40070225A /* HomeViewController.swift */,
+				BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				BF408D4124D04F910070225A /* Frameworks */,
 				BF408D4224D04F910070225A /* Resources */,
 				E698E9FAD2A2A7AC1F5424CB /* [CP] Embed Pods Frameworks */,
+				532E6DC2D4E4AAFA97A62DA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +275,7 @@
 				BF408D6224D04F920070225A /* Frameworks */,
 				BF408D6324D04F920070225A /* Resources */,
 				6D250E98872248A828BEA3FC /* [CP] Embed Pods Frameworks */,
+				FE847E7507047A796C711D92 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -383,6 +390,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		532E6DC2D4E4AAFA97A62DA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectSY/Pods-ProjectSY-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectSY/Pods-ProjectSY-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectSY/Pods-ProjectSY-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6D250E98872248A828BEA3FC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,6 +485,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectSY/Pods-ProjectSY-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FE847E7507047A796C711D92 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectSY-ProjectSYUITests/Pods-ProjectSY-ProjectSYUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectSY-ProjectSYUITests/Pods-ProjectSY-ProjectSYUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectSY-ProjectSYUITests/Pods-ProjectSY-ProjectSYUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -468,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9F7D4624FE36BA000718F5 /* SignInViewController.swift in Sources */,
 				BF408D4824D04F910070225A /* AppDelegate.swift in Sources */,
 				BF408D4A24D04F910070225A /* SceneDelegate.swift in Sources */,
 				BF9F7D4424FD4CC7000718F5 /* User.swift in Sources */,
@@ -481,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9F7D4724FE36BA000718F5 /* SignInViewController.swift in Sources */,
 				BF408D5F24D04F920070225A /* ProjectSYTests.swift in Sources */,
 				BF408D9624D17F050070225A /* StartViewController.swift in Sources */,
 				BF408D9E24D1B5B40070225A /* HomeViewController.swift in Sources */,
@@ -491,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9F7D4824FE36BA000718F5 /* SignInViewController.swift in Sources */,
 				BF408D6A24D04F920070225A /* ProjectSYUITests.swift in Sources */,
 				BF408D9724D17F050070225A /* StartViewController.swift in Sources */,
 				BF408D9F24D1B5B40070225A /* HomeViewController.swift in Sources */,
