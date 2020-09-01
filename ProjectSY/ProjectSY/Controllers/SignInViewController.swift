@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 import GoogleSignIn
 
 class SignInViewController: UIViewController {
@@ -20,6 +20,20 @@ class SignInViewController: UIViewController {
         googleSignInButton.layer.cornerRadius = googleSignInButton.frame.height/3
     }
     
+    func firebaseSignIn(firCredential credential: AuthCredential, userAuthentication authentication: GIDAuthentication){
+        Auth.auth().signIn(with: credential) { (authDataResult, error) in
+            guard error == nil else {
+                print("Google Sign In Error")
+                return
+            }
+            
+            guard let result = authDataResult else {
+                print("No Google Sign In Result")
+                return
+            }
+        }
+    }
+    // MARK: Google Sign In
     @IBAction func googleSignInButtonTouchedDown(){
         googleSignInButton.layer.backgroundColor = CGColor.init(srgbRed: 66/255, green: 133/255, blue: 244/255, alpha: 1)
         googleSignInButton.titleLabel?.textColor = UIColor.white
@@ -39,6 +53,7 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var googleSignInButton: UIButton!
+    
     
     /*
     // MARK: - Navigation

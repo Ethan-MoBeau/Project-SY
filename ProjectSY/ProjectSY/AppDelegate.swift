@@ -50,6 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        guard let controller = GIDSignIn.sharedInstance().presentingViewController as? SignInViewController else { return }
+        
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
                 print("The user has not signed in before or they have since signed out.")
@@ -63,11 +65,8 @@ extension AppDelegate: GIDSignInDelegate {
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                           accessToken: authentication.accessToken)
-        
-        print(authentication.accessToken)
-//        Auth.auth().signIn(with: credential) { (authResult, error) in
-//
-//        }
+
+        controller.firebaseSignIn(firCredential: credential,userAuthentication: authentication)
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
