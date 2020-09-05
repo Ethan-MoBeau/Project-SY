@@ -13,7 +13,8 @@ struct User {
     
     private init() {}
     
-    private(set) var userIdToken: String?
+    private var userIdToken: String?
+    private var connectionToken: String?
     
     mutating func setUserIdToken(_ newUserIdToken: String) {
         self.userIdToken = newUserIdToken

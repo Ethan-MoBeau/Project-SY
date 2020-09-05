@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -63,8 +64,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title=" 배경화면 수정하기" image="camera.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="findNewPicture:" destination="1Pl-yG-jBJ" eventType="touchUpInside" id="e95-M4-CzC"/>
-                                    <action selector="settingClose:" destination="1Pl-yG-jBJ" eventType="touchUpInside" id="hi3-Fj-vVL"/>
+                                    <action selector="findNewBG:" destination="1Pl-yG-jBJ" eventType="touchUpInside" id="LBU-uR-iUO"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yor-ye-3xL">
@@ -136,6 +136,7 @@
                             <constraint firstItem="6Nn-iY-8S9" firstAttribute="centerY" secondItem="aqp-co-q1f" secondAttribute="centerY" multiplier="770/448" id="ycn-DN-HiL"/>
                             <constraint firstItem="7oW-lk-VOx" firstAttribute="width" secondItem="aqp-co-q1f" secondAttribute="width" multiplier="0.128019" id="zyB-yz-E1Q"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="peB-NF-bJS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="001-home" id="qqR-Zt-SD9"/>
                     <connections>

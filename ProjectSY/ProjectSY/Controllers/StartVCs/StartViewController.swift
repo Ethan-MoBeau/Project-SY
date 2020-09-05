@@ -24,7 +24,8 @@ class StartViewController: UIViewController {
     
     // MARK: To Move VC
     @IBAction func goToNextStorybaord(_ sender: UIButton) {
-        if searchUserFromKeychain() {
+//        if searchUserFromKeychain() {
+        if false {
             let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
                 print("Cannot Segue to MainHome ViewController")

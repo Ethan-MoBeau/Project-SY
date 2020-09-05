@@ -115,10 +115,15 @@ class HomeViewController: UIViewController {
 
 }
 
+// Ma
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBAction func findNewPicture(_ sender: UIButton) {
-        let alert =  UIAlertController(title: "배경화면 변경", message: nil, preferredStyle: .actionSheet)
+    @IBAction func findNewBG(_ sender: UIButton) {
+        findNewPicture(alertTitle: "배경화면 변경")
+    }
+    
+    func findNewPicture(alertTitle: String){
+        let alert =  UIAlertController(title: alertTitle, message: nil, preferredStyle: .actionSheet)
 
         let library =  UIAlertAction(title: "사진 앨범", style: .default) {
             (action) in
@@ -139,7 +144,6 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         alert.addAction(cancel)
         present(alert,animated: true,completion: nil)
     }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let newImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             BGImage.image = newImage

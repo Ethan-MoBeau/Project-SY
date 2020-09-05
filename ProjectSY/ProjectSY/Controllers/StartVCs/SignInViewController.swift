@@ -45,11 +45,17 @@ class SignInViewController: UIViewController {
                 self.newUserKeyChainAdd(email: result.user.email ?? "", idToken: token)
                 User.shared.setUserIdToken(token)
                 
-                let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
-                guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
-                    print("Cannot Segue to MainHome ViewController")
+                /// 여기서 firestore에서 해당 토큰의 커넥션 찾기
+                
+                guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "makeNewConnect") else {
+                    print("Cannot Segue to makeNewConnect ViewController")
                     return
                 }
+//                let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+//                guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
+//                    print("Cannot Segue to MainHome ViewController")
+//                    return
+//                }
                 
                 viewController.modalPresentationStyle = .fullScreen
                 self.present(viewController, animated: true)

@@ -33,11 +33,13 @@
 		BF9F7D3E24F806D0000718F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */; };
 		BF9F7D3F24F806D0000718F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */; };
 		BF9F7D4024F806D0000718F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */; };
-		BF9F7D4224FD39D6000718F5 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4124FD39D6000718F5 /* Connection.swift */; };
 		BF9F7D4424FD4CC7000718F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4324FD4CC7000718F5 /* User.swift */; };
 		BF9F7D4624FE36BA000718F5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */; };
 		BF9F7D4724FE36BA000718F5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */; };
 		BF9F7D4824FE36BA000718F5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */; };
+		BFAA89552503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */; };
+		BFAA89562503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */; };
+		BFAA89572503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,9 +84,9 @@
 		BF408D9824D1B4190070225A /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		BF408D9C24D1B5B40070225A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF9F7D3D24F806D0000718F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BF9F7D4124FD39D6000718F5 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		BF9F7D4324FD4CC7000718F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeNewConnectViewController.swift; sourceTree = "<group>"; };
 		BFD9367522C389254FCAB4E8 /* Pods-ProjectSY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSY.release.xcconfig"; path = "Target Support Files/Pods-ProjectSY/Pods-ProjectSY.release.xcconfig"; sourceTree = "<group>"; };
 		C22FA1EAB95AD553980075EB /* Pods-ProjectSYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSYTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectSYTests/Pods-ProjectSYTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,8 +187,7 @@
 		BF408D8824D052F00070225A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BF408D9424D17F050070225A /* StartViewController.swift */,
-				BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */,
+				BFAA89532503A80700BA4A57 /* StartVCs */,
 				BF408D9C24D1B5B40070225A /* HomeViewController.swift */,
 			);
 			path = Controllers;
@@ -195,10 +196,19 @@
 		BF408D8A24D052F00070225A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BF9F7D4124FD39D6000718F5 /* Connection.swift */,
 				BF9F7D4324FD4CC7000718F5 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BFAA89532503A80700BA4A57 /* StartVCs */ = {
+			isa = PBXGroup;
+			children = (
+				BF408D9424D17F050070225A /* StartViewController.swift */,
+				BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */,
+				BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */,
+			);
+			path = StartVCs;
 			sourceTree = "<group>";
 		};
 		CE7C9FF417569ADEC9F6946E /* Pods */ = {
@@ -513,8 +523,8 @@
 				BF408D4824D04F910070225A /* AppDelegate.swift in Sources */,
 				BF408D4A24D04F910070225A /* SceneDelegate.swift in Sources */,
 				BF9F7D4424FD4CC7000718F5 /* User.swift in Sources */,
-				BF9F7D4224FD39D6000718F5 /* Connection.swift in Sources */,
 				BF408D9524D17F050070225A /* StartViewController.swift in Sources */,
+				BFAA89552503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */,
 				BF408D9D24D1B5B40070225A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +536,7 @@
 				BF9F7D4724FE36BA000718F5 /* SignInViewController.swift in Sources */,
 				BF408D5F24D04F920070225A /* ProjectSYTests.swift in Sources */,
 				BF408D9624D17F050070225A /* StartViewController.swift in Sources */,
+				BFAA89562503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */,
 				BF408D9E24D1B5B40070225A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +548,7 @@
 				BF9F7D4824FE36BA000718F5 /* SignInViewController.swift in Sources */,
 				BF408D6A24D04F920070225A /* ProjectSYUITests.swift in Sources */,
 				BF408D9724D17F050070225A /* StartViewController.swift in Sources */,
+				BFAA89572503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */,
 				BF408D9F24D1B5B40070225A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
