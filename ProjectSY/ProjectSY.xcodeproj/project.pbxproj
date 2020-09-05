@@ -40,6 +40,9 @@
 		BFAA89552503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */; };
 		BFAA89562503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */; };
 		BFAA89572503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */; };
+		BFAA89592503BCFC00BA4A57 /* newProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89582503BCFC00BA4A57 /* newProfileViewController.swift */; };
+		BFAA895A2503BCFC00BA4A57 /* newProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89582503BCFC00BA4A57 /* newProfileViewController.swift */; };
+		BFAA895B2503BCFC00BA4A57 /* newProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89582503BCFC00BA4A57 /* newProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,7 @@
 		BF9F7D4324FD4CC7000718F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeNewConnectViewController.swift; sourceTree = "<group>"; };
+		BFAA89582503BCFC00BA4A57 /* newProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newProfileViewController.swift; sourceTree = "<group>"; };
 		BFD9367522C389254FCAB4E8 /* Pods-ProjectSY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSY.release.xcconfig"; path = "Target Support Files/Pods-ProjectSY/Pods-ProjectSY.release.xcconfig"; sourceTree = "<group>"; };
 		C22FA1EAB95AD553980075EB /* Pods-ProjectSYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSYTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectSYTests/Pods-ProjectSYTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +148,7 @@
 		BF408D4624D04F910070225A /* ProjectSY */ = {
 			isa = PBXGroup;
 			children = (
+				BFAA895C2503CFCD00BA4A57 /* Utils */,
 				BF408D8A24D052F00070225A /* Models */,
 				BF408D8524D052F00070225A /* Views */,
 				BF408D8824D052F00070225A /* Controllers */,
@@ -207,8 +212,16 @@
 				BF408D9424D17F050070225A /* StartViewController.swift */,
 				BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */,
 				BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */,
+				BFAA89582503BCFC00BA4A57 /* newProfileViewController.swift */,
 			);
 			path = StartVCs;
+			sourceTree = "<group>";
+		};
+		BFAA895C2503CFCD00BA4A57 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		CE7C9FF417569ADEC9F6946E /* Pods */ = {
@@ -522,6 +535,7 @@
 				BF9F7D4624FE36BA000718F5 /* SignInViewController.swift in Sources */,
 				BF408D4824D04F910070225A /* AppDelegate.swift in Sources */,
 				BF408D4A24D04F910070225A /* SceneDelegate.swift in Sources */,
+				BFAA89592503BCFC00BA4A57 /* newProfileViewController.swift in Sources */,
 				BF9F7D4424FD4CC7000718F5 /* User.swift in Sources */,
 				BF408D9524D17F050070225A /* StartViewController.swift in Sources */,
 				BFAA89552503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */,
@@ -534,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9F7D4724FE36BA000718F5 /* SignInViewController.swift in Sources */,
+				BFAA895A2503BCFC00BA4A57 /* newProfileViewController.swift in Sources */,
 				BF408D5F24D04F920070225A /* ProjectSYTests.swift in Sources */,
 				BF408D9624D17F050070225A /* StartViewController.swift in Sources */,
 				BFAA89562503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */,
@@ -546,6 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9F7D4824FE36BA000718F5 /* SignInViewController.swift in Sources */,
+				BFAA895B2503BCFC00BA4A57 /* newProfileViewController.swift in Sources */,
 				BF408D6A24D04F920070225A /* ProjectSYUITests.swift in Sources */,
 				BF408D9724D17F050070225A /* StartViewController.swift in Sources */,
 				BFAA89572503A83E00BA4A57 /* makeNewConnectViewController.swift in Sources */,

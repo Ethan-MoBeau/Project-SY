@@ -47,7 +47,7 @@ class SignInViewController: UIViewController {
                 
                 /// 여기서 firestore에서 해당 토큰의 커넥션 찾기
                 
-                guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "makeNewConnect") else {
+                guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "newProfile") else {
                     print("Cannot Segue to makeNewConnect ViewController")
                     return
                 }

@@ -36,7 +36,11 @@ class StartViewController: UIViewController {
             present(viewController, animated: true)
         }
         else {
-            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignIn") else {
+//            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignIn") else {
+//                print("Cannot Segue to SignIn ViewController")
+//                return
+//            }
+            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "newProfile") else {
                 print("Cannot Segue to SignIn ViewController")
                 return
             }
