@@ -64,7 +64,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title=" 배경화면 수정하기" image="camera.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="findNewBG:" destination="1Pl-yG-jBJ" eventType="touchUpInside" id="LBU-uR-iUO"/>
+                                    <action selector="findNewPictureWithAlertTitle:" destination="1Pl-yG-jBJ" eventType="touchUpInside" id="3z3-ck-a9s"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yor-ye-3xL">

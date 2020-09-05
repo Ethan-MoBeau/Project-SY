@@ -176,7 +176,7 @@ Date Diary</string>
                                 <rect key="frame" x="0.0" y="114.66666666666667" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="NDg-AL-0Qg"/>
+                                    <constraint firstAttribute="height" constant="1" identifier="1" id="NDg-AL-0Qg"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정보 입력하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhd-Q4-He8">
@@ -185,11 +185,6 @@ Date Diary</string>
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exi-rF-Lgt">
-                                <rect key="frame" x="130" y="194" width="115" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="camera_2"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQ0-J2-qAj">
                                 <rect key="frame" x="0.0" y="316.33333333333331" width="375" height="74"/>
                                 <subviews>
@@ -203,7 +198,7 @@ Date Diary</string>
                                         <rect key="frame" x="117.66666666666669" y="73" width="140" height="1"/>
                                         <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="Nrl-SX-hNh"/>
+                                            <constraint firstAttribute="height" constant="1" identifier="2" id="Nrl-SX-hNh"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="USER NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uCX-a6-Vfz">
@@ -220,13 +215,13 @@ Date Diary</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="beE-Yx-pMH" firstAttribute="centerX" secondItem="OQ0-J2-qAj" secondAttribute="centerX" id="BgD-Nl-e4b"/>
-                                    <constraint firstAttribute="bottom" secondItem="beE-Yx-pMH" secondAttribute="bottom" id="K03-pl-5Cq"/>
-                                    <constraint firstItem="oZh-nd-nmJ" firstAttribute="centerY" secondItem="OQ0-J2-qAj" secondAttribute="centerY" id="Pa0-9I-Ed0"/>
-                                    <constraint firstItem="beE-Yx-pMH" firstAttribute="top" secondItem="uCX-a6-Vfz" secondAttribute="bottom" id="eOu-i4-S6Y"/>
-                                    <constraint firstItem="beE-Yx-pMH" firstAttribute="width" secondItem="OQ0-J2-qAj" secondAttribute="width" multiplier="0.373333" id="fuO-Is-SB2"/>
-                                    <constraint firstItem="oZh-nd-nmJ" firstAttribute="centerX" secondItem="OQ0-J2-qAj" secondAttribute="centerX" id="niX-jM-dRN"/>
-                                    <constraint firstItem="uCX-a6-Vfz" firstAttribute="centerX" secondItem="OQ0-J2-qAj" secondAttribute="centerX" id="sif-WP-zvZ"/>
+                                    <constraint firstItem="beE-Yx-pMH" firstAttribute="centerX" secondItem="OQ0-J2-qAj" secondAttribute="centerX" identifier="3" id="BgD-Nl-e4b"/>
+                                    <constraint firstAttribute="bottom" secondItem="beE-Yx-pMH" secondAttribute="bottom" identifier="4" id="K03-pl-5Cq"/>
+                                    <constraint firstItem="oZh-nd-nmJ" firstAttribute="centerY" secondItem="OQ0-J2-qAj" secondAttribute="centerY" identifier="8" id="Pa0-9I-Ed0"/>
+                                    <constraint firstItem="beE-Yx-pMH" firstAttribute="top" secondItem="uCX-a6-Vfz" secondAttribute="bottom" identifier="5" id="eOu-i4-S6Y"/>
+                                    <constraint firstItem="beE-Yx-pMH" firstAttribute="width" secondItem="OQ0-J2-qAj" secondAttribute="width" multiplier="0.373333" identifier="6" id="fuO-Is-SB2"/>
+                                    <constraint firstItem="oZh-nd-nmJ" firstAttribute="centerX" secondItem="OQ0-J2-qAj" secondAttribute="centerX" identifier="9" id="niX-jM-dRN"/>
+                                    <constraint firstItem="uCX-a6-Vfz" firstAttribute="centerX" secondItem="OQ0-J2-qAj" secondAttribute="centerX" identifier="7" id="sif-WP-zvZ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cea-09-rGS">
@@ -242,7 +237,7 @@ Date Diary</string>
                                         <rect key="frame" x="117.66666666666669" y="73" width="140" height="1"/>
                                         <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="898-1y-zKG"/>
+                                            <constraint firstAttribute="height" constant="1" identifier="10" id="898-1y-zKG"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0000.00.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mA-j7-iyB">
@@ -259,22 +254,15 @@ Date Diary</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ST7-cS-T8p" firstAttribute="top" secondItem="0mA-j7-iyB" secondAttribute="bottom" id="41G-HF-WYD"/>
-                                    <constraint firstItem="ST7-cS-T8p" firstAttribute="centerX" secondItem="Cea-09-rGS" secondAttribute="centerX" id="8Qm-Qq-tmV"/>
-                                    <constraint firstItem="0mA-j7-iyB" firstAttribute="centerX" secondItem="Cea-09-rGS" secondAttribute="centerX" id="OUk-Ke-Q6a"/>
-                                    <constraint firstAttribute="bottom" secondItem="ST7-cS-T8p" secondAttribute="bottom" id="VGb-aX-CTv"/>
-                                    <constraint firstItem="aVY-QQ-AeI" firstAttribute="centerY" secondItem="Cea-09-rGS" secondAttribute="centerY" id="ZA1-1k-IYx"/>
-                                    <constraint firstItem="ST7-cS-T8p" firstAttribute="width" secondItem="Cea-09-rGS" secondAttribute="width" multiplier="0.373333" id="nbf-nV-vta"/>
-                                    <constraint firstItem="aVY-QQ-AeI" firstAttribute="centerX" secondItem="Cea-09-rGS" secondAttribute="centerX" id="t0x-SS-YF2"/>
+                                    <constraint firstItem="ST7-cS-T8p" firstAttribute="top" secondItem="0mA-j7-iyB" secondAttribute="bottom" identifier="13" id="41G-HF-WYD"/>
+                                    <constraint firstItem="ST7-cS-T8p" firstAttribute="centerX" secondItem="Cea-09-rGS" secondAttribute="centerX" identifier="13" id="8Qm-Qq-tmV"/>
+                                    <constraint firstItem="0mA-j7-iyB" firstAttribute="centerX" secondItem="Cea-09-rGS" secondAttribute="centerX" identifier="16" id="OUk-Ke-Q6a"/>
+                                    <constraint firstAttribute="bottom" secondItem="ST7-cS-T8p" secondAttribute="bottom" identifier="14" id="VGb-aX-CTv"/>
+                                    <constraint firstItem="aVY-QQ-AeI" firstAttribute="centerY" secondItem="Cea-09-rGS" secondAttribute="centerY" identifier="11" id="ZA1-1k-IYx"/>
+                                    <constraint firstItem="ST7-cS-T8p" firstAttribute="width" secondItem="Cea-09-rGS" secondAttribute="width" multiplier="0.373333" identifier="15" id="nbf-nV-vta"/>
+                                    <constraint firstItem="aVY-QQ-AeI" firstAttribute="centerX" secondItem="Cea-09-rGS" secondAttribute="centerX" identifier="12" id="t0x-SS-YF2"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mA-R3-O1A">
-                                <rect key="frame" x="0.0" y="730" width="375" height="48"/>
-                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="시작하기">
-                                    <color key="titleColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7O-Wf-qye">
                                 <rect key="frame" x="0.0" y="474.33333333333331" width="375" height="73.999999999999943"/>
                                 <subviews>
@@ -305,13 +293,13 @@ Date Diary</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="E9P-rT-bHd" firstAttribute="centerX" secondItem="m7O-Wf-qye" secondAttribute="centerX" id="Bt8-o5-QNJ"/>
-                                    <constraint firstItem="BeI-fT-qq2" firstAttribute="centerX" secondItem="m7O-Wf-qye" secondAttribute="centerX" id="R6F-Wl-rSi"/>
-                                    <constraint firstItem="BeI-fT-qq2" firstAttribute="centerY" secondItem="m7O-Wf-qye" secondAttribute="centerY" id="TFv-ZB-vcC"/>
-                                    <constraint firstItem="E9P-rT-bHd" firstAttribute="top" secondItem="3DM-9z-sbX" secondAttribute="bottom" id="cEn-B5-ovH"/>
-                                    <constraint firstItem="3DM-9z-sbX" firstAttribute="centerX" secondItem="m7O-Wf-qye" secondAttribute="centerX" id="neM-bM-Zui"/>
-                                    <constraint firstItem="E9P-rT-bHd" firstAttribute="width" secondItem="m7O-Wf-qye" secondAttribute="width" multiplier="0.373333" id="nfs-dv-Gp0"/>
-                                    <constraint firstAttribute="bottom" secondItem="E9P-rT-bHd" secondAttribute="bottom" id="rU4-be-NCt"/>
+                                    <constraint firstItem="E9P-rT-bHd" firstAttribute="centerX" secondItem="m7O-Wf-qye" secondAttribute="centerX" identifier="19" id="Bt8-o5-QNJ"/>
+                                    <constraint firstItem="BeI-fT-qq2" firstAttribute="centerX" secondItem="m7O-Wf-qye" secondAttribute="centerX" identifier="17" id="R6F-Wl-rSi"/>
+                                    <constraint firstItem="BeI-fT-qq2" firstAttribute="centerY" secondItem="m7O-Wf-qye" secondAttribute="centerY" identifier="18" id="TFv-ZB-vcC"/>
+                                    <constraint firstItem="E9P-rT-bHd" firstAttribute="top" secondItem="3DM-9z-sbX" secondAttribute="bottom" identifier="20" id="cEn-B5-ovH"/>
+                                    <constraint firstItem="3DM-9z-sbX" firstAttribute="centerX" secondItem="m7O-Wf-qye" secondAttribute="centerX" identifier="23" id="neM-bM-Zui"/>
+                                    <constraint firstItem="E9P-rT-bHd" firstAttribute="width" secondItem="m7O-Wf-qye" secondAttribute="width" multiplier="0.373333" identifier="21" id="nfs-dv-Gp0"/>
+                                    <constraint firstAttribute="bottom" secondItem="E9P-rT-bHd" secondAttribute="bottom" identifier="22" id="rU4-be-NCt"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nz-DT-nPg">
@@ -327,7 +315,7 @@ Date Diary</string>
                                         <rect key="frame" x="117.66666666666669" y="73" width="140" height="1"/>
                                         <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="pUR-Tt-3Cf"/>
+                                            <constraint firstAttribute="height" constant="1" identifier="24" id="pUR-Tt-3Cf"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write Comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-0r-71J">
@@ -344,45 +332,69 @@ Date Diary</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="GqR-0r-71J" firstAttribute="centerX" secondItem="4nz-DT-nPg" secondAttribute="centerX" id="SBu-FT-EOM"/>
-                                    <constraint firstItem="CHk-Eo-CeZ" firstAttribute="centerX" secondItem="4nz-DT-nPg" secondAttribute="centerX" id="U0a-K2-2KP"/>
-                                    <constraint firstAttribute="bottom" secondItem="CHk-Eo-CeZ" secondAttribute="bottom" id="UOB-qm-YQz"/>
-                                    <constraint firstItem="CHk-Eo-CeZ" firstAttribute="top" secondItem="GqR-0r-71J" secondAttribute="bottom" id="W54-d1-qRs"/>
-                                    <constraint firstItem="CHk-Eo-CeZ" firstAttribute="width" secondItem="4nz-DT-nPg" secondAttribute="width" multiplier="0.373333" id="h6S-qQ-rhe"/>
-                                    <constraint firstItem="kqq-de-lGd" firstAttribute="centerX" secondItem="4nz-DT-nPg" secondAttribute="centerX" id="kQ2-JM-Wma"/>
-                                    <constraint firstItem="kqq-de-lGd" firstAttribute="centerY" secondItem="4nz-DT-nPg" secondAttribute="centerY" id="oKN-AA-MAP"/>
+                                    <constraint firstItem="GqR-0r-71J" firstAttribute="centerX" secondItem="4nz-DT-nPg" secondAttribute="centerX" identifier="31" id="SBu-FT-EOM"/>
+                                    <constraint firstItem="CHk-Eo-CeZ" firstAttribute="centerX" secondItem="4nz-DT-nPg" secondAttribute="centerX" identifier="27" id="U0a-K2-2KP"/>
+                                    <constraint firstAttribute="bottom" secondItem="CHk-Eo-CeZ" secondAttribute="bottom" identifier="28" id="UOB-qm-YQz"/>
+                                    <constraint firstItem="CHk-Eo-CeZ" firstAttribute="top" secondItem="GqR-0r-71J" secondAttribute="bottom" identifier="29" id="W54-d1-qRs"/>
+                                    <constraint firstItem="CHk-Eo-CeZ" firstAttribute="width" secondItem="4nz-DT-nPg" secondAttribute="width" multiplier="0.373333" identifier="30" id="h6S-qQ-rhe"/>
+                                    <constraint firstItem="kqq-de-lGd" firstAttribute="centerX" secondItem="4nz-DT-nPg" secondAttribute="centerX" identifier="25" id="kQ2-JM-Wma"/>
+                                    <constraint firstItem="kqq-de-lGd" firstAttribute="centerY" secondItem="4nz-DT-nPg" secondAttribute="centerY" identifier="26" id="oKN-AA-MAP"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mA-R3-O1A">
+                                <rect key="frame" x="0.0" y="730" width="375" height="48"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera_2" translatesAutoresizingMaskIntoConstraints="NO" id="NKm-4h-30i">
+                                <rect key="frame" x="130" y="193.33333333333334" width="115" height="115.00000000000003"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaE-33-3PC">
+                                <rect key="frame" x="130" y="193" width="115" height="115"/>
+                                <connections>
+                                    <action selector="findNewPicture:" destination="qmd-Ym-kFF" eventType="touchUpInside" id="C3w-TT-8Y2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4nz-DT-nPg" firstAttribute="top" secondItem="m7O-Wf-qye" secondAttribute="bottom" constant="5" id="30n-50-cDx"/>
-                            <constraint firstItem="Zhd-Q4-He8" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="3mN-Wc-CbE"/>
-                            <constraint firstItem="OQ0-J2-qAj" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" id="6xJ-VW-CDZ"/>
-                            <constraint firstItem="OQ0-J2-qAj" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" id="7cg-Vf-q8b"/>
-                            <constraint firstItem="Cea-09-rGS" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" id="Dwq-k5-h8c"/>
-                            <constraint firstItem="m7O-Wf-qye" firstAttribute="top" secondItem="Cea-09-rGS" secondAttribute="bottom" constant="5" id="ILZ-c8-jNc"/>
-                            <constraint firstItem="4nz-DT-nPg" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="KXg-Oa-LWf"/>
-                            <constraint firstItem="m7O-Wf-qye" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="MRZ-HA-TlT"/>
-                            <constraint firstItem="Cea-09-rGS" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="MnK-bU-Rza"/>
-                            <constraint firstItem="OQ0-J2-qAj" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="Nk0-jD-nUF"/>
-                            <constraint firstItem="Cea-09-rGS" firstAttribute="top" secondItem="OQ0-J2-qAj" secondAttribute="bottom" constant="5" id="OcV-fs-iDd"/>
-                            <constraint firstItem="L0C-VB-QUt" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" id="PgX-BQ-qaf"/>
-                            <constraint firstItem="Zhd-Q4-He8" firstAttribute="centerY" secondItem="Baw-fe-BbV" secondAttribute="centerY" multiplier="165/448" id="RNN-rE-axB"/>
-                            <constraint firstItem="0mA-R3-O1A" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="XNz-5m-65p"/>
-                            <constraint firstItem="L0C-VB-QUt" firstAttribute="centerY" secondItem="Baw-fe-BbV" secondAttribute="centerY" multiplier="125.5/448" id="Yu4-e0-7Aw"/>
-                            <constraint firstItem="0mA-R3-O1A" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" id="bFD-j5-q9b"/>
-                            <constraint firstItem="L0C-VB-QUt" firstAttribute="top" secondItem="8yT-7I-DMS" secondAttribute="bottom" constant="6" id="bOh-FS-vlU"/>
-                            <constraint firstItem="Baw-fe-BbV" firstAttribute="bottom" secondItem="0mA-R3-O1A" secondAttribute="bottom" id="dmc-F5-bDn"/>
-                            <constraint firstItem="Cea-09-rGS" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" id="hg5-wM-Ypt"/>
-                            <constraint firstItem="L0C-VB-QUt" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="iiM-xh-9z1"/>
-                            <constraint firstItem="4nz-DT-nPg" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" id="pXd-uL-zE3"/>
-                            <constraint firstItem="4nz-DT-nPg" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" id="rQX-zy-mAV"/>
-                            <constraint firstItem="m7O-Wf-qye" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" id="rS8-7T-eGX"/>
-                            <constraint firstItem="8yT-7I-DMS" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="u32-3C-ihx"/>
-                            <constraint firstItem="OQ0-J2-qAj" firstAttribute="centerY" secondItem="Baw-fe-BbV" secondAttribute="centerY" multiplier="0.86" id="uVX-Af-KzG"/>
-                            <constraint firstItem="0mA-R3-O1A" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.0591133" id="ujF-4U-22J"/>
-                            <constraint firstItem="m7O-Wf-qye" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" id="wXD-r1-LQw"/>
+                            <constraint firstItem="4nz-DT-nPg" firstAttribute="top" secondItem="m7O-Wf-qye" secondAttribute="bottom" constant="5" identifier="52" id="30n-50-cDx"/>
+                            <constraint firstItem="Zhd-Q4-He8" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" identifier="38" id="3mN-Wc-CbE"/>
+                            <constraint firstItem="OQ0-J2-qAj" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" identifier="40" id="6xJ-VW-CDZ"/>
+                            <constraint firstItem="OQ0-J2-qAj" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" identifier="41" id="7cg-Vf-q8b"/>
+                            <constraint firstItem="NKm-4h-30i" firstAttribute="centerY" secondItem="Baw-fe-BbV" secondAttribute="centerY" multiplier="0.61" id="D1v-ki-hoM"/>
+                            <constraint firstItem="Cea-09-rGS" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" identifier="44" id="Dwq-k5-h8c"/>
+                            <constraint firstItem="m7O-Wf-qye" firstAttribute="top" secondItem="Cea-09-rGS" secondAttribute="bottom" constant="5" identifier="48" id="ILZ-c8-jNc"/>
+                            <constraint firstItem="yaE-33-3PC" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.141626" id="IsQ-MA-FvY"/>
+                            <constraint firstItem="4nz-DT-nPg" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" identifier="53" id="KXg-Oa-LWf"/>
+                            <constraint firstItem="m7O-Wf-qye" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" identifier="49" id="MRZ-HA-TlT"/>
+                            <constraint firstItem="NKm-4h-30i" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.141626" id="MgW-gU-q3Z"/>
+                            <constraint firstItem="Cea-09-rGS" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" identifier="45" id="MnK-bU-Rza"/>
+                            <constraint firstItem="yaE-33-3PC" firstAttribute="centerY" secondItem="Baw-fe-BbV" secondAttribute="centerY" multiplier="0.61" id="Mty-2J-5M0"/>
+                            <constraint firstItem="OQ0-J2-qAj" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" identifier="42" id="Nk0-jD-nUF"/>
+                            <constraint firstItem="Cea-09-rGS" firstAttribute="top" secondItem="OQ0-J2-qAj" secondAttribute="bottom" constant="5" identifier="46" id="OcV-fs-iDd"/>
+                            <constraint firstItem="L0C-VB-QUt" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" identifier="33" id="PgX-BQ-qaf"/>
+                            <constraint firstItem="Zhd-Q4-He8" firstAttribute="centerY" secondItem="Baw-fe-BbV" secondAttribute="centerY" multiplier="165/448" identifier="39" id="RNN-rE-axB"/>
+                            <constraint firstItem="NKm-4h-30i" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="Sv1-qG-C9y"/>
+                            <constraint firstItem="0mA-R3-O1A" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" identifier="56" id="XNz-5m-65p"/>
+                            <constraint firstItem="L0C-VB-QUt" firstAttribute="centerY" secondItem="Baw-fe-BbV" secondAttribute="centerY" multiplier="125.5/448" identifier="34" id="Yu4-e0-7Aw"/>
+                            <constraint firstItem="0mA-R3-O1A" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" identifier="57" id="bFD-j5-q9b"/>
+                            <constraint firstItem="L0C-VB-QUt" firstAttribute="top" secondItem="8yT-7I-DMS" secondAttribute="bottom" constant="6" identifier="35" id="bOh-FS-vlU"/>
+                            <constraint firstItem="NKm-4h-30i" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" multiplier="0.306667" id="dUj-hk-odt"/>
+                            <constraint firstItem="Baw-fe-BbV" firstAttribute="bottom" secondItem="0mA-R3-O1A" secondAttribute="bottom" identifier="32" id="dmc-F5-bDn"/>
+                            <constraint firstItem="yaE-33-3PC" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" multiplier="0.306667" id="h1M-Jy-NPa"/>
+                            <constraint firstItem="Cea-09-rGS" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" identifier="47" id="hg5-wM-Ypt"/>
+                            <constraint firstItem="L0C-VB-QUt" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" identifier="36" id="iiM-xh-9z1"/>
+                            <constraint firstItem="4nz-DT-nPg" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" identifier="54" id="pXd-uL-zE3"/>
+                            <constraint firstItem="4nz-DT-nPg" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" identifier="55" id="rQX-zy-mAV"/>
+                            <constraint firstItem="m7O-Wf-qye" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" identifier="50" id="rS8-7T-eGX"/>
+                            <constraint firstItem="8yT-7I-DMS" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" identifier="37" id="u32-3C-ihx"/>
+                            <constraint firstItem="OQ0-J2-qAj" firstAttribute="centerY" secondItem="Baw-fe-BbV" secondAttribute="centerY" multiplier="0.86" identifier="43" id="uVX-Af-KzG"/>
+                            <constraint firstItem="0mA-R3-O1A" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.0591133" identifier="58" id="ujF-4U-22J"/>
+                            <constraint firstItem="m7O-Wf-qye" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" identifier="51" id="wXD-r1-LQw"/>
+                            <constraint firstItem="yaE-33-3PC" firstAttribute="centerX" secondItem="Baw-fe-BbV" secondAttribute="centerX" id="zhX-Qj-c7r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Baw-fe-BbV"/>
                     </view>
@@ -390,6 +402,7 @@ Date Diary</string>
                         <outlet property="birthdayTextField" destination="0mA-j7-iyB" id="6ly-xO-c2c"/>
                         <outlet property="commentTextField" destination="GqR-0r-71J" id="NWJ-TQ-XzU"/>
                         <outlet property="phoneNumberTextField" destination="3DM-9z-sbX" id="KgM-hn-Mqh"/>
+                        <outlet property="selectedProfileImage" destination="NKm-4h-30i" id="B7A-t7-caC"/>
                         <outlet property="usernameTextField" destination="uCX-a6-Vfz" id="ccs-Sa-wPZ"/>
                     </connections>
                 </viewController>
