@@ -20,20 +20,50 @@ class SignInViewController: UIViewController {
         googleSignInButton.layer.cornerRadius = googleSignInButton.frame.height/3
     }
     
+    // MARK: Firebase Sign In
     func firebaseSignIn(firCredential credential: AuthCredential, userAuthentication authentication: GIDAuthentication){
         Auth.auth().signIn(with: credential) { (authDataResult, error) in
             guard error == nil else {
-                print("Google Sign In Error")
+                print("Sign In Error")
+                return
+            }
+            guard let result = authDataResult else {
+                print("No Sign In Result")
                 return
             }
             
-            guard let result = authDataResult else {
-                print("No Google Sign In Result")
-                return
+            result.user.getIDToken { (userIdToken, error) in
+                guard error == nil else {
+                    print("Getting idToken Error")
+                    return
+                }
+                guard let token = userIdToken else {
+                    print("No IdToken Result")
+                    return
+                }
+                
+                self.newUserKeyChainAdd(email: result.user.email ?? "", idToken: token)
+                User.shared.setUserIdToken(token)
+                
+                let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+                guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
+                    print("Cannot Segue to MainHome ViewController")
+                    return
+                }
+                
+                viewController.modalPresentationStyle = .fullScreen
+                self.present(viewController, animated: true)
             }
         }
     }
+    
+    func newUserKeyChainAdd(email: String, idToken: String){
+        UserDefaults.standard.set(idToken, forKey: "idToken")
+        UserDefaults.standard.set(email, forKey: "email")
+    }
+    
     // MARK: Google Sign In
+    
     @IBAction func googleSignInButtonTouchedDown(){
         googleSignInButton.layer.backgroundColor = CGColor.init(srgbRed: 66/255, green: 133/255, blue: 244/255, alpha: 1)
         googleSignInButton.titleLabel?.textColor = UIColor.white

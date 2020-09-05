@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         BGImagePickController.delegate = self
         BGImagePickController.allowsEditing = true
         

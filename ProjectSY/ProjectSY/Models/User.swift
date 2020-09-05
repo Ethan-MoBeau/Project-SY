@@ -13,9 +13,9 @@ struct User {
     
     private init() {}
     
-    private(set) var userDeviceToken: String?
+    private(set) var userIdToken: String?
     
-    mutating func setUserDeviceToken(_ newUserDeviceToken: String) {
-        self.userDeviceToken = newUserDeviceToken
+    mutating func setUserIdToken(_ newUserIdToken: String) {
+        self.userIdToken = newUserIdToken
     }
 }

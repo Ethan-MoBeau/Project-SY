@@ -10,7 +10,7 @@
         <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="ProjectSY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Start" id="BYZ-38-t0r" customClass="StartViewController" customModule="ProjectSY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                             <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="goToMainStorybaord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Tf-Mg-w1s"/>
+                                            <action selector="goToNextStorybaord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ifZ-P5-XbH"/>
                                         </connections>
                                     </button>
                                 </subviews>

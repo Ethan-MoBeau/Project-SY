@@ -15,35 +15,48 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         StartButton.layer.cornerRadius = 16
         StartButton.titleLabel?.font = StartButton.titleLabel?.font.withSize(self.view.frame.height * 15 / 896)
         AppName.font = AppName.font.withSize(self.view.frame.height * 17 / 896)
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func goToMainStorybaord(_ sender: UIButton) {
-        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignIn") else {
-            print("Cannot Segue to SignIn ViewController")
-            return
+    // MARK: To Move VC
+    @IBAction func goToNextStorybaord(_ sender: UIButton) {
+        if searchUserFromKeychain() {
+            let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
+                print("Cannot Segue to MainHome ViewController")
+                return
+            }
+            
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true)
         }
-        
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true)
+        else {
+            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignIn") else {
+                print("Cannot Segue to SignIn ViewController")
+                return
+            }
+            
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true)
+        }
     }
     
-//    @IBAction func goToMainStorybaord(_ sender: UIButton) {
-//
-//        let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
-//
-//        guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
-//            print("에러 : Main으로 갈 수 없습니다")
-//            return
-//        }
-//
-//        viewController.modalPresentationStyle = .fullScreen
-//        present(viewController, animated: true)
-//    }
+    // MARK: Check Sign In Status
+    func searchUserFromKeychain() -> Bool {
+        if let idToken = UserDefaults.standard.string(forKey: "idToken") {
+            
+            print("idtoken: \(idToken)")
+            User.shared.setUserIdToken(idToken)
+            return true
+        }
+        else {
+            return false
+        }
+    }
 
     /*
     // MARK: - Navigation
