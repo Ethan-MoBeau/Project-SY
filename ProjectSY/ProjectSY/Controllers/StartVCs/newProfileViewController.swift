@@ -33,15 +33,31 @@ class newProfileViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Text Edit Finish
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-          self.view.endEditing(true)
+        self.view.endEditing(true)
+
+        isTextFieldValid(textField: phoneNumberTextField, regex: "^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})")
+        isTextFieldValid(textField: birthdayTextField, regex: "([0-9]{4}).([0-1]{1})([0-9]{1}.([0-3]{1})([0-9]{1}))")
     }
     
     func textFieldShouldReturn(_ textfield: UITextField) -> Bool{
         textfield.resignFirstResponder()
+        
+        isTextFieldValid(textField: phoneNumberTextField, regex: "^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})")
+        isTextFieldValid(textField: birthdayTextField, regex: "([0-9]{4}).([0-1]{1})([0-9]{1}.([0-3]{1})([0-9]{1}))")
         return true
     }
     
-
+    func isTextFieldValid(textField: UITextField, regex: String){
+        if textField.text == nil { return }
+        
+        if !NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: textField.text) {
+            textField.textColor = UIColor.red
+        }
+        else {
+            textField.textColor = Colors.shared.customGrayFont
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

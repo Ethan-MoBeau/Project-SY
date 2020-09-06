@@ -46,6 +46,9 @@
 		BFAA895E2503D29300BA4A57 /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA895D2503D29300BA4A57 /* imagePicker.swift */; };
 		BFAA895F2503D29300BA4A57 /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA895D2503D29300BA4A57 /* imagePicker.swift */; };
 		BFAA89602503D29300BA4A57 /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA895D2503D29300BA4A57 /* imagePicker.swift */; };
+		BFAA89622504B5C000BA4A57 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89612504B5C000BA4A57 /* colors.swift */; };
+		BFAA89632504B5C000BA4A57 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89612504B5C000BA4A57 /* colors.swift */; };
+		BFAA89642504B5C000BA4A57 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA89612504B5C000BA4A57 /* colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,7 @@
 		BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeNewConnectViewController.swift; sourceTree = "<group>"; };
 		BFAA89582503BCFC00BA4A57 /* newProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newProfileViewController.swift; sourceTree = "<group>"; };
 		BFAA895D2503D29300BA4A57 /* imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePicker.swift; sourceTree = "<group>"; };
+		BFAA89612504B5C000BA4A57 /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		BFD9367522C389254FCAB4E8 /* Pods-ProjectSY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSY.release.xcconfig"; path = "Target Support Files/Pods-ProjectSY/Pods-ProjectSY.release.xcconfig"; sourceTree = "<group>"; };
 		C22FA1EAB95AD553980075EB /* Pods-ProjectSYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectSYTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectSYTests/Pods-ProjectSYTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				BFAA895D2503D29300BA4A57 /* imagePicker.swift */,
+				BFAA89612504B5C000BA4A57 /* colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -538,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9F7D4624FE36BA000718F5 /* SignInViewController.swift in Sources */,
+				BFAA89622504B5C000BA4A57 /* colors.swift in Sources */,
 				BFAA895E2503D29300BA4A57 /* imagePicker.swift in Sources */,
 				BF408D4824D04F910070225A /* AppDelegate.swift in Sources */,
 				BF408D4A24D04F910070225A /* SceneDelegate.swift in Sources */,
@@ -554,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9F7D4724FE36BA000718F5 /* SignInViewController.swift in Sources */,
+				BFAA89632504B5C000BA4A57 /* colors.swift in Sources */,
 				BFAA895A2503BCFC00BA4A57 /* newProfileViewController.swift in Sources */,
 				BF408D5F24D04F920070225A /* ProjectSYTests.swift in Sources */,
 				BF408D9624D17F050070225A /* StartViewController.swift in Sources */,
@@ -568,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9F7D4824FE36BA000718F5 /* SignInViewController.swift in Sources */,
+				BFAA89642504B5C000BA4A57 /* colors.swift in Sources */,
 				BFAA895B2503BCFC00BA4A57 /* newProfileViewController.swift in Sources */,
 				BF408D6A24D04F920070225A /* ProjectSYUITests.swift in Sources */,
 				BF408D9724D17F050070225A /* StartViewController.swift in Sources */,
