@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class newProfileViewController: UIViewController, UITextFieldDelegate {
 
@@ -20,6 +21,14 @@ class newProfileViewController: UIViewController, UITextFieldDelegate {
         birthdayTextField.delegate = self
         phoneNumberTextField.delegate = self
         commentTextField.delegate = self
+        
+        selectedProfileImage.layer.cornerRadius = selectedProfileImage.frame.size.width/2.5
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.scrollViewTouch))
+        recognizer.numberOfTapsRequired = 1
+        recognizer.isEnabled = true
+        recognizer.cancelsTouchesInView = false
+        textScrollView.addGestureRecognizer(recognizer)
     }
     
     @IBOutlet weak var usernameTextField: UITextField!
@@ -29,44 +38,100 @@ class newProfileViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var selectedProfileImage: UIImageView!
     
-    let ProfileImagePickController = UIImagePickerController()
+    @IBOutlet weak var textScrollView: UIScrollView!
     
-    // MARK: Text Edit Finish
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+    let ProfileImagePickController = UIImagePickerController()
+    var isAllTextFieldValid: Bool = false
+    
+    // MARK: Text Edit
+    // 반응형으로 데이터 입력 완료되면 그때그때 시작하는 방향으로 개선하면 좋을듯
+    func checkVaildity(){
+        isAllTextFieldValid = isTextFieldValid(textField: phoneNumberTextField, regex: "^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})") && isTextFieldValid(textField: birthdayTextField, regex: "([0-9]{4}).([0-1]{1})([0-9]{1}.([0-3]{1})([0-9]{1}))")
+    }
+    
+    @objc func scrollViewTouch(){
+        checkVaildity()
         self.view.endEditing(true)
-
-        isTextFieldValid(textField: phoneNumberTextField, regex: "^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})")
-        isTextFieldValid(textField: birthdayTextField, regex: "([0-9]{4}).([0-1]{1})([0-9]{1}.([0-3]{1})([0-9]{1}))")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        checkVaildity()
+        self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textfield: UITextField) -> Bool{
+        checkVaildity()
         textfield.resignFirstResponder()
-        
-        isTextFieldValid(textField: phoneNumberTextField, regex: "^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})")
-        isTextFieldValid(textField: birthdayTextField, regex: "([0-9]{4}).([0-1]{1})([0-9]{1}.([0-3]{1})([0-9]{1}))")
         return true
     }
     
-    func isTextFieldValid(textField: UITextField, regex: String){
-        if textField.text == nil { return }
+    func isTextFieldValid(textField: UITextField, regex: String) -> Bool{
+        if textField.text == nil { return false }
         
         if !NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: textField.text) {
             textField.textColor = UIColor.red
+            return false
         }
         else {
             textField.textColor = Colors.shared.customGrayFont
+            return true
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    var profileImage: UIImage? = nil
+    
+    // MARK: User Data Writing Finished
+    @IBAction func finishWritingProfile(_ sender: Any) {
+        isAllTextFieldValid = isAllTextFieldValid && (usernameTextField.text != nil) && (commentTextField.text != nil)
+        
+        if isAllTextFieldValid == true && profileImage != nil{
+            guard let userToken = User.shared.getUserIdToken() else {
+                print("No Sign In Status")
+                return
+            }
+            guard let profileImageData = profileImage?.jpegData(compressionQuality: 1) else {
+                print("jpeg Image Converting Failed")
+                return
+            }
+            
+            let uploadData: [String: Any] = [
+                "name" : usernameTextField.text!,
+                "birthday" : birthdayTextField.text!,
+                "phone": phoneNumberTextField.text!,
+                "comment": commentTextField.text!
+            ]
+            
+            AppStorage.shared.upload(subPath: "images/\(userToken)/profile.jpeg", uploadData: profileImageData)
+            AppDB.shared.addData(collection: "users", data: uploadData)
+            
+            UserDefaults.standard.set(usernameTextField.text! + birthdayTextField.text!, forKey: "profileToken")
+            
+            // To makeConnectVC
+            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "makeNewConnect") else {
+                print("Cannot Segue to makeNewConnect ViewController")
+                return
+            }
+            
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true)
+        }
+        else if profileImage == nil {
+            let alert = UIAlertController(title: "프로필 사진 등록", message: "프로필 사진이 등록되었는지 확인해주세요", preferredStyle: .alert)
+            
+            let cancel = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            
+            alert.addAction(cancel)
+            present(alert,animated: true,completion: nil)
+        }
+        else {
+            let alert = UIAlertController(title: "입력 오류", message: "빈 칸 없이 정확히 입력되었는지 확인해주세요", preferredStyle: .alert)
+            
+            let cancel = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            
+            alert.addAction(cancel)
+            present(alert,animated: true,completion: nil)
+        }
     }
-    */
 }
 
 extension newProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -97,6 +162,7 @@ extension newProfileViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let newImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             selectedProfileImage.image = newImage
+            profileImage = newImage
         }
 
         dismiss(animated: true, completion: nil)
