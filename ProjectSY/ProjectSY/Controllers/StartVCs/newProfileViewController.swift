@@ -22,6 +22,12 @@ class newProfileViewController: UIViewController, UITextFieldDelegate {
         phoneNumberTextField.delegate = self
         commentTextField.delegate = self
         
+        let userData = User.shared.getUserData()
+        usernameTextField.text = userData?["name"] as? String
+        birthdayTextField.text = userData?["birthday"] as? String
+        phoneNumberTextField.text = userData?["phone"] as? String
+        commentTextField.text = userData?["comment"] as? String
+        
         selectedProfileImage.layer.cornerRadius = selectedProfileImage.frame.size.width/2.5
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.scrollViewTouch))
@@ -85,7 +91,7 @@ class newProfileViewController: UIViewController, UITextFieldDelegate {
         isAllTextFieldValid = isAllTextFieldValid && (usernameTextField.text != nil) && (commentTextField.text != nil)
         
         if isAllTextFieldValid == true && profileImage != nil{
-            guard let userToken = User.shared.getUserIdToken() else {
+            guard let userIdToken = User.shared.getUserIdToken() else {
                 print("No Sign In Status")
                 return
             }
@@ -98,13 +104,18 @@ class newProfileViewController: UIViewController, UITextFieldDelegate {
                 "name" : usernameTextField.text!,
                 "birthday" : birthdayTextField.text!,
                 "phone": phoneNumberTextField.text!,
-                "comment": commentTextField.text!
+                "comment": commentTextField.text!,
             ]
             
-            AppStorage.shared.upload(subPath: "images/\(userToken)/profile.jpeg", uploadData: profileImageData)
-            AppDB.shared.addData(collection: "users", data: uploadData)
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpg"
+            let fileName: String = usernameTextField.text! + phoneNumberTextField.text!
             
-            UserDefaults.standard.set(usernameTextField.text! + birthdayTextField.text!, forKey: "profileToken")
+            AppStorage.shared.upload(subPath: "images/\(fileName)/profile.jpg", uploadData: profileImageData,metadata: metadata)
+            AppDB.shared.addData(collection: "users", id: userIdToken, data: uploadData)
+            
+            User.shared.setUserData(uploadData)
+            UserDefaults.standard.set(uploadData, forKey: "userData")
             
             // To makeConnectVC
             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "makeNewConnect") else {
@@ -131,6 +142,29 @@ class newProfileViewController: UIViewController, UITextFieldDelegate {
             alert.addAction(cancel)
             present(alert,animated: true,completion: nil)
         }
+    }
+    
+    // MARK: Back to SignIn View
+    @IBAction func backToSignIn(_ sender: Any) {
+        let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
+        
+        let yes = UIAlertAction(title: "예", style: .default) { action in
+            User.shared.clean()
+            
+            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignIn") else {
+                print("Cannot Segue to SignIn ViewController")
+                return
+            }
+            
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true)
+        }
+       
+        let no = UIAlertAction(title: "아니오", style: .cancel, handler: nil)
+        
+        alert.addAction(no)
+        alert.addAction(yes)
+        present(alert, animated: true, completion: nil)
     }
 }
 

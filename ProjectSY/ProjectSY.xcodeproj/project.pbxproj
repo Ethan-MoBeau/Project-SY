@@ -209,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				BFAA89532503A80700BA4A57 /* StartVCs */,
-				BF408D9C24D1B5B40070225A /* HomeViewController.swift */,
+				BFAA896D2506A9F200BA4A57 /* MainVCs */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,8 +227,8 @@
 			children = (
 				BF408D9424D17F050070225A /* StartViewController.swift */,
 				BF9F7D4524FE36BA000718F5 /* SignInViewController.swift */,
-				BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */,
 				BFAA89582503BCFC00BA4A57 /* newProfileViewController.swift */,
+				BFAA89542503A83E00BA4A57 /* makeNewConnectViewController.swift */,
 			);
 			path = StartVCs;
 			sourceTree = "<group>";
@@ -242,6 +242,14 @@
 				BFAA89692504F94C00BA4A57 /* AppDB.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BFAA896D2506A9F200BA4A57 /* MainVCs */ = {
+			isa = PBXGroup;
+			children = (
+				BF408D9C24D1B5B40070225A /* HomeViewController.swift */,
+			);
+			path = MainVCs;
 			sourceTree = "<group>";
 		};
 		CE7C9FF417569ADEC9F6946E /* Pods */ = {

@@ -74,11 +74,11 @@ class StartViewController: UIViewController {
     
     // MARK: Check Sign In Status
     func searchUserFromKeychain() -> SignInStatus {
-        if let idToken = UserDefaults.standard.string(forKey: "idToken") {
+        if let idToken = UserDefaults.standard.string(forKey: "userIdToken") {
             User.shared.setUserIdToken(idToken)
             
-            if let profileToken = UserDefaults.standard.string(forKey: "profileToken") {
-                User.shared.setUserProfileToken(profileToken)
+            if let userData = UserDefaults.standard.dictionary(forKey: "userData") {
+                User.shared.setUserData(userData)
                 
                 if let connectionToken = UserDefaults.standard.string(forKey: "connectionToken"){
                     User.shared.setConnectionToken(connectionToken)
@@ -98,15 +98,4 @@ class StartViewController: UIViewController {
             return .noSignInData
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

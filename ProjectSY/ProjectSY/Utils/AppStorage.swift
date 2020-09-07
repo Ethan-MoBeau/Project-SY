@@ -14,14 +14,17 @@ struct AppStorage {
     
     let storage = Storage.storage()
     
-    func upload(subPath: String, uploadData: Data){
+    func upload(subPath: String, uploadData: Data, metadata: StorageMetadata){
         let userProfileImageRef = storage.reference().child(subPath)
         
-        userProfileImageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+        userProfileImageRef.putData(uploadData, metadata: metadata) { (metadata, error) in
             guard metadata != nil else {
-              print("Storage Upload Error")
-              return
+                print("Storage Upload Error: \(String(describing: error))")
+
+                return
             }
+            
+            print("Storage Uploaded Successfully")
         }
     }
     

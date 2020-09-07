@@ -18,6 +18,7 @@ class makeNewConnectViewController: UIViewController {
     
     @IBOutlet weak var codeLabel: UILabel!
     
+    // MARK: Make Connection
     @IBAction func getConnectionCode(_ sender: Any) {
         let randomNum = arc4random_uniform(1000000)
         
@@ -41,14 +42,37 @@ class makeNewConnectViewController: UIViewController {
         codeLabel.text = labeltext
     }
     
-    /*
-    // MARK: - Navigation
+    @IBAction func writeConnectionCode(_ sender: Any) {
+        let alert = UIAlertController(title: "연결코드 입력", message: nil, preferredStyle: .alert)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let confirm = UIAlertAction(title: "확인", style: .default) { action in
+         
+        }
+
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+
+
+        alert.addAction(confirm)
+        alert.addAction(cancel)
+        alert.addTextField {
+            textField in
+            textField.placeholder = "연결코드 6자리를 입력하세요"
+            textField.borderStyle = .roundedRect
+            textField.clearButtonMode = .whileEditing
+            textField.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center
+            textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        }
+        present(alert, animated: true, completion: nil)
     }
-    */
-
+    
+    // MARK: Back to Profile View
+    @IBAction func backToProfile(_ sender: Any) {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "newProfile") else {
+            print("Cannot Segue to newProfile ViewController")
+            return
+        }
+        
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true)
+    }
 }

@@ -15,7 +15,7 @@ struct User {
     
     private var userIdToken: String?
     private var connectionToken: String?
-    private var userProfileToken: String?
+    private var userData: [String:Any]?
     
     mutating func setUserIdToken(_ newUserIdToken: String) {
         self.userIdToken = newUserIdToken
@@ -25,12 +25,12 @@ struct User {
         return self.userIdToken
     }
     
-    mutating func setUserProfileToken(_ newUserProfileToken: String) {
-        self.userProfileToken = newUserProfileToken
+    mutating func setUserData(_ userData: [String:Any]) {
+        self.userData = userData
     }
     
-    func getProfileToken() -> String? {
-        return self.userProfileToken
+    func getUserData() -> [String:Any]? {
+        return self.userData
     }
     
     mutating func setConnectionToken(_ newConnectionToken: String) {
@@ -39,5 +39,11 @@ struct User {
     
     func getConnectionToken() -> String? {
         return self.connectionToken
+    }
+    
+    mutating func clean(){
+        self.userIdToken = nil
+        self.connectionToken = nil
+        self.userData = nil
     }
 }

@@ -14,19 +14,14 @@ struct AppDB {
     
     let db = Firestore.firestore()
     
-    func addData(collection:String, data: [String:Any]){
-        var ref: DocumentReference? = nil
-        ref = db.collection(collection).addDocument(data: data) { error in
+    func addData(collection:String, id: String, data: [String:Any]){
+        db.collection(collection).document(id).setData(data, completion: { error in
             if let error = error {
                 print("Error adding document: \(error)")
             }
             else {
-                print("Document added with ID: \(ref!.documentID)")
+                print("Document added Succesfully")
             }
-        }
-    }
-    
-    func getData(){
-        
+        })
     }
 }

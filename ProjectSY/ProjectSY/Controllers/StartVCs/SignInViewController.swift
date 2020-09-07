@@ -22,6 +22,7 @@ class SignInViewController: UIViewController {
     
     // MARK: Firebase Sign In
     func firebaseSignIn(firCredential credential: AuthCredential, userAuthentication authentication: GIDAuthentication){
+        
         Auth.auth().signIn(with: credential) { (authDataResult, error) in
             guard error == nil else {
                 print("Sign In Error")
@@ -37,35 +38,68 @@ class SignInViewController: UIViewController {
                     print("Getting idToken Error")
                     return
                 }
-                guard let token = userIdToken else {
+                guard let idToken = userIdToken else {
                     print("No IdToken Result")
                     return
                 }
                 
-                self.newUserKeyChainAdd(email: result.user.email ?? "", idToken: token)
-                User.shared.setUserIdToken(token)
+                UserDefaults.standard.set(userIdToken, forKey: "userIdToken")
+                User.shared.setUserIdToken(idToken)
                 
-                /// 여기서 firestore에서 해당 토큰의 커넥션 찾기
+                /// 여기서 firestore에서 해당 토큰의 커넥션 찾기 필요  : 현재는 유저 확인까지만 완료된 상태
                 
-                guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "newProfile") else {
-                    print("Cannot Segue to makeNewConnect ViewController")
-                    return
+                if self.checkProfile(userIdToken: idToken){
+                    let userData = User.shared.getUserData()
+                    if userData?["connectionToken"] != nil {
+                        /// 커넥션 매칭
+                    }
+                    else {
+                        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "makeNewConnect") else {
+                            print("Cannot Segue to makeNewConnect ViewController")
+                            return
+                        }
+                        
+                        viewController.modalPresentationStyle = .fullScreen
+                        self.present(viewController, animated: true)
+                    }
                 }
+                else {
+                    guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "newProfile") else {
+                        print("Cannot Segue to newProfile ViewController")
+                        return
+                    }
+                    
+                    viewController.modalPresentationStyle = .fullScreen
+                    self.present(viewController, animated: true)
+                }
+            }
 //                let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
 //                guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
 //                    print("Cannot Segue to MainHome ViewController")
 //                    return
 //                }
-                
-                viewController.modalPresentationStyle = .fullScreen
-                self.present(viewController, animated: true)
-            }
         }
     }
     
-    func newUserKeyChainAdd(email: String, idToken: String){
-        UserDefaults.standard.set(idToken, forKey: "idToken")
-        UserDefaults.standard.set(email, forKey: "email")
+    func checkProfile(userIdToken: String) -> Bool{
+        let db = AppDB.shared.db
+        
+        let ref = db.collection("users")
+        
+        ref.document(userIdToken).getDocument { (documentSnapshot, error) in
+            if error != nil {
+                print("Error getting documents: \(String(describing: error))")
+            }
+            else {
+                if let downloadedData = documentSnapshot!.data() {
+                    User.shared.setUserData(downloadedData)
+                }
+                else { print("No User Data from Server") }
+            }
+        }
+        
+        if User.shared.getUserData() == nil { return false }
+        else { return true }
     }
     
     // MARK: Google Sign In
@@ -89,15 +123,4 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var googleSignInButton: UIButton!
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

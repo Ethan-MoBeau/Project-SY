@@ -227,7 +227,7 @@ Date Diary</string>
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0000.00.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mA-j7-iyB">
-                                                        <rect key="frame" x="152.33333333333334" y="56.666666666666636" width="70.333333333333343" height="16.333333333333336"/>
+                                                        <rect key="frame" x="152.33333333333334" y="55.666666666666636" width="70.333333333333343" height="17.333333333333336"/>
                                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -305,7 +305,7 @@ Date Diary</string>
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write Comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-0r-71J">
-                                                        <rect key="frame" x="139" y="56.666666666666693" width="97" height="16.333333333333336"/>
+                                                        <rect key="frame" x="139" y="55.666666666666693" width="97" height="17.333333333333336"/>
                                                         <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -379,7 +379,7 @@ Date Diary</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mA-R3-O1A">
-                                <rect key="frame" x="0.0" y="764" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="730.66666666666663" width="375" height="81.333333333333371"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="시작하기">
                                     <color key="titleColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
@@ -391,20 +391,30 @@ Date Diary</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera_2" translatesAutoresizingMaskIntoConstraints="NO" id="NKm-4h-30i">
                                 <rect key="frame" x="130" y="190" width="115" height="115"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaE-33-3PC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaE-33-3PC" userLabel="ProfileImage Add Button">
                                 <rect key="frame" x="130" y="190" width="115" height="115"/>
                                 <connections>
                                     <action selector="findNewPicture:" destination="qmd-Ym-kFF" eventType="touchUpInside" id="C3w-TT-8Y2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHA-BB-gTN" userLabel="Backspace Button">
+                                <rect key="frame" x="8" y="46" width="40" height="30.000000000000007"/>
+                                <color key="tintColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="delete.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backToSignIn:" destination="qmd-Ym-kFF" eventType="touchUpInside" id="9Vc-OK-3op"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DCE-Gt-Pjz" firstAttribute="leading" secondItem="2y3-i0-7Eb" secondAttribute="leading" id="1o7-Dc-wFW"/>
+                            <constraint firstItem="yHA-BB-gTN" firstAttribute="centerX" secondItem="2y3-i0-7Eb" secondAttribute="centerX" multiplier="0.15" id="1tn-24-Ybq"/>
                             <constraint firstItem="4nz-DT-nPg" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" id="21U-yD-EWT"/>
                             <constraint firstItem="DCE-Gt-Pjz" firstAttribute="top" secondItem="2y3-i0-7Eb" secondAttribute="top" id="2Ic-0l-6bW"/>
                             <constraint firstItem="Zhd-Q4-He8" firstAttribute="centerX" secondItem="2y3-i0-7Eb" secondAttribute="centerX" identifier="38" id="3mN-Wc-CbE"/>
                             <constraint firstItem="Cea-09-rGS" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" id="47E-fI-AAb"/>
+                            <constraint firstItem="yHA-BB-gTN" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.0406404" id="5Sf-u9-brp"/>
                             <constraint firstItem="m7O-Wf-qye" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.091133" id="5n9-1J-zhT"/>
                             <constraint firstItem="lp4-QQ-0Fx" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.23" id="Awq-43-c3H"/>
                             <constraint firstItem="NKm-4h-30i" firstAttribute="centerY" secondItem="2y3-i0-7Eb" secondAttribute="centerY" multiplier="0.61" id="D1v-ki-hoM"/>
@@ -421,6 +431,7 @@ Date Diary</string>
                             <constraint firstItem="Cea-09-rGS" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" id="Rjb-F4-csO"/>
                             <constraint firstItem="NKm-4h-30i" firstAttribute="centerX" secondItem="2y3-i0-7Eb" secondAttribute="centerX" id="Sv1-qG-C9y"/>
                             <constraint firstItem="m7O-Wf-qye" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" id="TE3-P6-dMe"/>
+                            <constraint firstItem="yHA-BB-gTN" firstAttribute="centerY" secondItem="2y3-i0-7Eb" secondAttribute="centerY" multiplier="0.15" id="UTe-cS-ZD1"/>
                             <constraint firstAttribute="bottom" secondItem="DCE-Gt-Pjz" secondAttribute="bottom" id="WwH-Fh-UZd"/>
                             <constraint firstItem="0mA-R3-O1A" firstAttribute="centerX" secondItem="2y3-i0-7Eb" secondAttribute="centerX" identifier="56" id="XNz-5m-65p"/>
                             <constraint firstItem="L0C-VB-QUt" firstAttribute="centerY" secondItem="2y3-i0-7Eb" secondAttribute="centerY" multiplier="125.5/448" identifier="34" id="Yu4-e0-7Aw"/>
@@ -438,8 +449,9 @@ Date Diary</string>
                             <constraint firstItem="Zwi-MC-G7K" firstAttribute="top" secondItem="2y3-i0-7Eb" secondAttribute="top" id="noP-Ct-yVo"/>
                             <constraint firstItem="a7s-pt-gAY" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="1.2" id="pQT-qq-VZP"/>
                             <constraint firstItem="8yT-7I-DMS" firstAttribute="centerX" secondItem="2y3-i0-7Eb" secondAttribute="centerX" identifier="37" id="u32-3C-ihx"/>
-                            <constraint firstItem="0mA-R3-O1A" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.0591133" identifier="58" id="ujF-4U-22J"/>
+                            <constraint firstItem="0mA-R3-O1A" firstAttribute="height" secondItem="2y3-i0-7Eb" secondAttribute="height" multiplier="0.1" identifier="58" id="ujF-4U-22J"/>
                             <constraint firstItem="yaE-33-3PC" firstAttribute="centerX" secondItem="2y3-i0-7Eb" secondAttribute="centerX" id="zhX-Qj-c7r"/>
+                            <constraint firstItem="yHA-BB-gTN" firstAttribute="width" secondItem="2y3-i0-7Eb" secondAttribute="width" multiplier="0.106667" id="zna-u3-5MH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -464,14 +476,14 @@ Date Diary</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COf-2V-Jpi" userLabel="Line">
-                                <rect key="frame" x="0.0" y="250.33333333333334" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="247" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="02b-pC-hgu"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커플 연결하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8l-b4-UP6">
-                                <rect key="frame" x="78" y="196.33333333333334" width="219" height="45"/>
+                                <rect key="frame" x="78" y="193" width="219" height="45"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="40"/>
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -495,16 +507,40 @@ Date Diary</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aay-QG-pRJ" userLabel="Backspace Button">
+                                <rect key="frame" x="8" y="46" width="40" height="30.000000000000007"/>
+                                <color key="tintColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="delete.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backToProfile:" destination="AOQ-pf-GCp" eventType="touchUpInside" id="Dug-Fc-hqF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0E-bv-2fy">
+                                <rect key="frame" x="88" y="519" width="199" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="연결코드 입력하기">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="getConnectionCode:" destination="AOQ-pf-GCp" eventType="touchUpInside" id="Xmv-N4-RgV"/>
+                                    <action selector="writeConnectionCode:" destination="AOQ-pf-GCp" eventType="touchUpInside" id="Prq-GN-JsV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="COf-2V-Jpi" firstAttribute="centerY" secondItem="2oE-lW-J9M" secondAttribute="centerY" multiplier="0.61" id="3vo-wD-DEo"/>
+                            <constraint firstItem="COf-2V-Jpi" firstAttribute="centerY" secondItem="eT2-IW-UTa" secondAttribute="centerY" multiplier="0.61" id="3vo-wD-DEo"/>
+                            <constraint firstItem="Aay-QG-pRJ" firstAttribute="centerX" secondItem="eT2-IW-UTa" secondAttribute="centerX" multiplier="0.15" id="73c-hr-bAv"/>
                             <constraint firstItem="COf-2V-Jpi" firstAttribute="width" secondItem="eT2-IW-UTa" secondAttribute="width" id="MGL-kF-fFN"/>
-                            <constraint firstItem="r8l-b4-UP6" firstAttribute="centerX" secondItem="2oE-lW-J9M" secondAttribute="centerX" id="W7c-Fu-dDW"/>
-                            <constraint firstItem="COf-2V-Jpi" firstAttribute="centerX" secondItem="2oE-lW-J9M" secondAttribute="centerX" id="p4g-Kb-8SZ"/>
+                            <constraint firstItem="r8l-b4-UP6" firstAttribute="centerX" secondItem="eT2-IW-UTa" secondAttribute="centerX" id="W7c-Fu-dDW"/>
+                            <constraint firstItem="Aay-QG-pRJ" firstAttribute="width" secondItem="eT2-IW-UTa" secondAttribute="width" multiplier="0.106667" id="kuq-f7-IN7"/>
+                            <constraint firstItem="Aay-QG-pRJ" firstAttribute="height" secondItem="eT2-IW-UTa" secondAttribute="height" multiplier="0.0406404" id="mQw-pg-ygA"/>
+                            <constraint firstItem="COf-2V-Jpi" firstAttribute="centerX" secondItem="eT2-IW-UTa" secondAttribute="centerX" id="p4g-Kb-8SZ"/>
+                            <constraint firstItem="Aay-QG-pRJ" firstAttribute="centerY" secondItem="eT2-IW-UTa" secondAttribute="centerY" multiplier="0.15" id="rSE-zc-Qvt"/>
                             <constraint firstItem="COf-2V-Jpi" firstAttribute="top" secondItem="r8l-b4-UP6" secondAttribute="bottom" constant="9" id="uEY-Y7-J4k"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2oE-lW-J9M"/>
                     </view>
                     <connections>
                         <outlet property="codeLabel" destination="lmA-AA-lDb" id="pVa-SV-lUr"/>
@@ -518,6 +554,7 @@ Date Diary</string>
     <resources>
         <image name="btn_google_light_normal_ios" width="48" height="48"/>
         <image name="camera_2" width="100" height="100"/>
+        <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="초기 화면" width="631" height="896"/>
     </resources>
 </document>
