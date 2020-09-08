@@ -13,10 +13,17 @@ class makeNewConnectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let connectionCode = User.shared.getUserData()?["connectionCode"] as? String {
+            codeLabel.text = connectionCode
+            getCodeButton.isHidden = true
+            getCodeAgainButton.isHidden = false
+        }
     }
     
     @IBOutlet weak var codeLabel: UILabel!
+    
+    @IBOutlet weak var getCodeButton: UIButton!
+    @IBOutlet weak var getCodeAgainButton: UIButton!
     
     // MARK: Make Connection
     @IBAction func getConnectionCode(_ sender: Any) {
@@ -40,6 +47,25 @@ class makeNewConnectViewController: UIViewController {
         
         codeLabel.isHidden = false
         codeLabel.text = labeltext
+        
+        // delete last connectionCode
+        if let lastConnectionCode = User.shared.getUserData()?["connectionCode"] as? String {
+            AppDB.shared.removeData(collection: "connection", id: lastConnectionCode)
+        }
+        
+        // server side
+        AppDB.shared.addData(collection: "connection", id: labeltext, data: ["sender": User.shared.getUserIdToken()!])
+        AppDB.shared.addSingleData(collection: "users", id: User.shared.getUserIdToken()!, data: ["connectionCode": labeltext])
+        
+        // local side
+        User.shared.setSingleUserData(key: "connectionCode", value: labeltext)
+        
+        if getCodeButton.isHidden == false {
+            getCodeButton.isHidden = true
+        }
+        if getCodeAgainButton.isHidden == true {
+            getCodeAgainButton.isHidden = false
+        }
     }
     
     @IBAction func writeConnectionCode(_ sender: Any) {

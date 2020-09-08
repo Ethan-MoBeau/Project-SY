@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseAuth
 
 class newProfileViewController: UIViewController, UITextFieldDelegate {
 
@@ -109,9 +110,8 @@ class newProfileViewController: UIViewController, UITextFieldDelegate {
             
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpg"
-            let fileName: String = usernameTextField.text! + phoneNumberTextField.text!
             
-            AppStorage.shared.upload(subPath: "images/\(fileName)/profile.jpg", uploadData: profileImageData,metadata: metadata)
+            AppStorage.shared.upload(subPath: "images/\(userIdToken)/profile.jpg", uploadData: profileImageData,metadata: metadata)
             AppDB.shared.addData(collection: "users", id: userIdToken, data: uploadData)
             
             User.shared.setUserData(uploadData)
@@ -149,7 +149,14 @@ class newProfileViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
         
         let yes = UIAlertAction(title: "예", style: .default) { action in
-            User.shared.clean()
+            User.shared.signOut()
+     
+            do {
+                try Auth.auth().signOut()
+            }
+            catch let signOutError as NSError {
+              print ("Error signing out: %@", signOutError)
+            }
             
             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignIn") else {
                 print("Cannot Segue to SignIn ViewController")

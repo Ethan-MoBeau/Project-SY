@@ -489,7 +489,7 @@ Date Diary</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eo-kQ-L9a">
-                                <rect key="frame" x="88" y="360" width="199" height="58"/>
+                                <rect key="frame" x="88" y="294" width="199" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -498,6 +498,18 @@ Date Diary</string>
                                 </state>
                                 <connections>
                                     <action selector="getConnectionCode:" destination="AOQ-pf-GCp" eventType="touchUpInside" id="k2d-Fa-pdV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0E-bv-2fy">
+                                <rect key="frame" x="88" y="519" width="199" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="연결코드 입력하기">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="writeConnectionCode:" destination="AOQ-pf-GCp" eventType="touchUpInside" id="Prq-GN-JsV"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmA-AA-lDb">
@@ -515,17 +527,16 @@ Date Diary</string>
                                     <action selector="backToProfile:" destination="AOQ-pf-GCp" eventType="touchUpInside" id="Dug-Fc-hqF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0E-bv-2fy">
-                                <rect key="frame" x="88" y="519" width="199" height="58"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuF-lB-JP6">
+                                <rect key="frame" x="88" y="360" width="199" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="연결코드 입력하기">
+                                <state key="normal" title="연결코드 다시 받기">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="getConnectionCode:" destination="AOQ-pf-GCp" eventType="touchUpInside" id="Xmv-N4-RgV"/>
-                                    <action selector="writeConnectionCode:" destination="AOQ-pf-GCp" eventType="touchUpInside" id="Prq-GN-JsV"/>
+                                    <action selector="getConnectionCode:" destination="AOQ-pf-GCp" eventType="touchUpInside" id="9nD-AX-o7d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -544,6 +555,8 @@ Date Diary</string>
                     </view>
                     <connections>
                         <outlet property="codeLabel" destination="lmA-AA-lDb" id="pVa-SV-lUr"/>
+                        <outlet property="getCodeAgainButton" destination="yuF-lB-JP6" id="vTZ-Vs-GIT"/>
+                        <outlet property="getCodeButton" destination="4eo-kQ-L9a" id="XUk-UU-KyC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASR-g4-v7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

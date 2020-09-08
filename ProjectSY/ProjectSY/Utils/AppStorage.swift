@@ -24,7 +24,7 @@ struct AppStorage {
                 return
             }
             
-            print("Storage Uploaded Successfully")
+            print("path: \(subPath) : Storage Uploaded Successfully")
         }
     }
     

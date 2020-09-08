@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GoogleSignIn
 
 struct User {
     static var shared = User()
@@ -17,6 +18,7 @@ struct User {
     private var connectionToken: String?
     private var userData: [String:Any]?
     
+    // MARK: User Data
     mutating func setUserIdToken(_ newUserIdToken: String) {
         self.userIdToken = newUserIdToken
     }
@@ -27,6 +29,15 @@ struct User {
     
     mutating func setUserData(_ userData: [String:Any]) {
         self.userData = userData
+    }
+    
+    mutating func setSingleUserData(key: String, value: Any){
+        guard self.userData == nil else {
+            self.userData = [key:value]
+            return
+        }
+        
+        self.userData![key] = value
     }
     
     func getUserData() -> [String:Any]? {
@@ -41,9 +52,20 @@ struct User {
         return self.connectionToken
     }
     
-    mutating func clean(){
+    // MARK: Sign Out
+    private mutating func clean(){
         self.userIdToken = nil
         self.connectionToken = nil
         self.userData = nil
+    }
+    
+    mutating func signOut(){
+        self.clean()
+        
+        GIDSignIn.sharedInstance().signOut()
+        
+        for key in UserDefaults.standard.dictionaryRepresentation().keys{
+            UserDefaults.standard.removeObject(forKey: key.description)
+        }
     }
 }

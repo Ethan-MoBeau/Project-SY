@@ -33,45 +33,35 @@ class SignInViewController: UIViewController {
                 return
             }
             
-            result.user.getIDToken { (userIdToken, error) in
-                guard error == nil else {
-                    print("Getting idToken Error")
-                    return
-                }
-                guard let idToken = userIdToken else {
-                    print("No IdToken Result")
-                    return
-                }
-                
-                UserDefaults.standard.set(userIdToken, forKey: "userIdToken")
-                User.shared.setUserIdToken(idToken)
-                
-                /// 여기서 firestore에서 해당 토큰의 커넥션 찾기 필요  : 현재는 유저 확인까지만 완료된 상태
-                
-                if self.checkProfile(userIdToken: idToken){
-                    let userData = User.shared.getUserData()
-                    if userData?["connectionToken"] != nil {
-                        /// 커넥션 매칭
-                    }
-                    else {
-                        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "makeNewConnect") else {
-                            print("Cannot Segue to makeNewConnect ViewController")
-                            return
-                        }
-                        
-                        viewController.modalPresentationStyle = .fullScreen
-                        self.present(viewController, animated: true)
-                    }
+            let userIdToken = result.user.uid
+            UserDefaults.standard.set(userIdToken, forKey: "userIdToken")
+            User.shared.setUserIdToken(userIdToken)
+            
+            // 여기서 firestore에서 해당 토큰의 커넥션 찾기 필요  : 현재는 유저 확인까지만 완료된 상태
+            
+            if self.checkProfile(userIdToken: userIdToken){
+                let userData = User.shared.getUserData()
+                if userData?["connectionToken"] != nil {
+                    /// 커넥션 매칭
                 }
                 else {
-                    guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "newProfile") else {
-                        print("Cannot Segue to newProfile ViewController")
+                    guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "makeNewConnect") else {
+                        print("Cannot Segue to makeNewConnect ViewController")
                         return
                     }
                     
                     viewController.modalPresentationStyle = .fullScreen
                     self.present(viewController, animated: true)
                 }
+            }
+            else {
+                guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "newProfile") else {
+                    print("Cannot Segue to newProfile ViewController")
+                    return
+                }
+                
+                viewController.modalPresentationStyle = .fullScreen
+                self.present(viewController, animated: true)
             }
 //                let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
 //                guard let viewController = storyboard.instantiateViewController(withIdentifier: "MainHome") as? UITabBarController else {
